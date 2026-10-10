@@ -1,0 +1,44 @@
+LICENCIA - CORRECCIÓN ACTUAL ANTES DE BETO
+
+OBJETIVO
+Dejar la aplicación estable antes de conectar BETO como motor principal.
+
+INCLUYE
+- Solo 2 perfiles: Gestor y Administrador.
+- Sin cambio obligatorio de contraseña en pantalla.
+- Sin referencias visibles a demo o piloto.
+- Interfaz oscura refinada y espaciados corregidos.
+- Nuevo logo visual de LicencIA.
+- Inventario con consulta de usuarios por licencia.
+- Asignación/desasignación masiva hasta 500 usuarios.
+- Reasignación masiva con dos listas: origen y destino.
+- Prevalidación de cardinalidad, duplicados, usuarios y asignaciones.
+- Reasignación masiva atómica hasta 160 pares por ejecución.
+- Auditoría persistente.
+
+APLICACIÓN
+1. Detén Streamlit con Ctrl + C.
+2. Copia TODO el contenido de esta carpeta sobre C:\LicencIA\LicencIA y acepta reemplazar.
+3. NO reemplaces ni borres .streamlit\secrets.toml.
+4. Ejecuta una sola vez:
+   python scripts\migrate_two_profiles.py
+5. Inicia:
+   python -m streamlit run app.py
+
+CREDENCIALES
+Gestor
+  gestor.licencias@empresas.com.pe
+  LicencIA#Gestor2026!
+
+Administrador
+  admin.licencia@empresas.com.pe
+  LicencIA#Admin2026!
+
+NO EJECUTAR
+- initialize_firestore.py
+- ningún reset de Firebase
+
+Eso conservará inventario, asignaciones y auditoría actuales.
+
+SIGUIENTE ETAPA
+Una vez validada esta versión, se entrenará BETO con el dataset de LicencIA y se conectará como clasificador principal. El modelo ligero actual quedará como respaldo.

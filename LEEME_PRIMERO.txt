@@ -1,0 +1,29 @@
+LICENCIA - BETO + STREAMLIT CLOUD SEGURO
+
+OBJETIVO
+- En PC local con GPU: usar BETO como motor principal.
+- En Streamlit Cloud/CPU: usar automáticamente el modelo ligero para evitar caídas por RAM.
+- Mantener reglas determinísticas y Firebase sin cambios.
+
+APLICAR
+1. Cierra Streamlit con Ctrl+C.
+2. Copia todo este paquete sobre tu proyecto y acepta reemplazar.
+3. NO borres ni reemplaces .streamlit/secrets.toml.
+4. NO ejecutes initialize_firestore.py.
+5. Con .venv activo, ejecuta:
+   powershell -ExecutionPolicy Bypass -File .\ENTRENAR_BETO_WINDOWS.ps1
+6. Al terminar, verifica:
+   python scripts\check_nlp_engine.py
+7. Evalúa:
+   python scripts\evaluate_beto_licencia.py
+8. Levanta LicencIA:
+   python -m streamlit run app.py
+
+RESULTADO ESPERADO LOCAL
+primary: BETO
+active: true
+device: cuda:0 (o similar)
+
+STREAMLIT CLOUD
+El requirements.txt NO instala PyTorch/Transformers. Por diseño, la nube usa el modelo ligero y Firebase.
+No subas models/beto_licencia/ al repositorio de despliegue.

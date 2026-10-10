@@ -1,0 +1,8 @@
+streamlit>=1.40,<2
+firebase-admin>=6.5
+google-cloud-firestore>=2.16
+bcrypt>=4.1
+pandas>=2.2
+scikit-learn==1.8.0
+rapidfuzz>=3.9
+joblib>=1.4

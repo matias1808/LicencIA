@@ -1,0 +1,654 @@
+text,intent
+quiero recuperar la licencia E5 de hector.castillo1691@empresas.com.pe,unassign
+qué productos están vinculados a sofia.torres1326@empresas.com.pe,user_licenses
+cuánto queda por consumir de PowerBI,inventory
+pon cloud pc a disposición de paola.perez0601@empresas.com.pe,assign
+necesito habilitarle m365 f3 al correo jorge.salazar0344@empresas.com.pe,assign
+dime la ocupación actual de Kiosk,inventory
+cuánto queda por consumir de M365 E3,inventory
+dime la ocupación actual de PowerBI,inventory
+la licencia M365 E5 debe salir de paola.lopez0605@empresas.com.pe y terminar en natalia.delgado0875@empresas.com.pe,reassign
+muy bien gracias,thanks
+dime la ocupación actual de m365 f3,inventory
+pon Power Apps Premium a disposición de marco.mendoza1053@empresas.com.pe,assign
+quiero recuperar la licencia Exchange Kiosk de julio.delgado1795@empresas.com.pe,unassign
+qué productos están vinculados a carla.castillo0771@empresas.com.pe,user_licenses
+consulta qué servicios licdos tiene luis.cruz0186@empresas.com.pe,user_licenses
+haz que alonso.navarro0741@empresas.com.pe quede licdo con Visio P2,assign
+quiero que miguel.vargas0409@empresas.com.pe herede Planner Project P3 que ahora usa alonso.valdez0749@empresas.com.pe,reassign
+retira del correo sofia.ramirez1328@empresas.com.pe el producto M365 E3,unassign
+necesito habilitarle Microsoft 365 E3 al correo maria.campos0063@empresas.com.pe,assign
+necesito habilitarle m365 e3 al correo jorge.medina0339@empresas.com.pe,assign
+hola qué tal,greeting
+tengo que hacer una gestión de licencia?,ambiguous
+estado de capacidad de Power Automate Premium?,inventory
+qué productos están vinculados a fiorella.delgado0715@empresas.com.pe,user_licenses
+quiero que micaela.aguilar1580@empresas.com.pe herede Kiosk que ahora usa nicole.vega1667@empresas.com.pe,reassign
+cuánto queda por consumir de m365 e5,inventory
+dime la ocupación actual de exchange p1,inventory
+gracias me sirvió?,thanks
+qué productos están vinculados a marco.diaz1052@empresas.com.pe,user_licenses
+la licencia Power Automate debe salir de camila.flores0447@empresas.com.pe y terminar en rafael.acosta0917@empresas.com.pe,reassign
+qué productos están vinculados a sergio.lopez0805@empresas.com.pe,user_licenses
+muéstrame el registro de actividad,audit
+muy bien gracias?,thanks
+cuánto queda por consumir de Microsoft 365 E5,inventory
+consulta qué servicios licenciados tiene valeria.gonzales0376@empresas.com.pe,user_licenses
+haz que lucia.sanchez0204@empresas.com.pe pierda el acceso a M365 F3,unassign
+haz que alonso.torres0726@empresas.com.pe quede licenciado con Power BI Premium,assign
+necesito habilitarle power apps premium al correo luis.mendoza0173@empresas.com.pe,assign
+haz que fiorella.chavez0694@empresas.com.pe quede licenciado con PowerBI?,assign
+retira del correo oscar.campos1543@empresas.com.pe el producto Power Automate,unassign
+retira del correo diana.aguilar1500@empresas.com.pe el producto Visio P2,unassign
+la licencia M365 E5 debe salir de martin.mendoza1373@empresas.com.pe y terminar en nicole.torres1646@empresas.com.pe,reassign
+CUÁL ES LA CAPITAL DE ALEMANIA?,out_of_scope
+quiero recuperar la licencia Exchange Kiosk de fernando.palomino0996@empresas.com.pe,unassign
+necesito habilitarle Power BI al correo andrea.cruz0306@empresas.com.pe,assign
+CONSULTA QUÉ SERVICIOS LICENCIADOS TIENE RAUL.DELGADO1475@EMPRESAS.COM.PE,user_licenses
+quiero que bruno.sanchez1604@empresas.com.pe herede Visio P2 que ahora usa hector.flores1687@empresas.com.pe,reassign
+haz que daniela.navarro0541@empresas.com.pe pierda el acceso a Planner Project P3,unassign
+la lic E3 debe salir de carla.paredes0782@empresas.com.pe y terminar en oscar.gonzales1536@empresas.com.pe,reassign
+haz que alejandra.silva1097@empresas.com.pe pierda el acceso a PowerBI Premium,unassign
+quiero que melissa.valdez1189@empresas.com.pe herede Power Apps Premium que ahora usa miguel.espinoza0428@empresas.com.pe,reassign
+cuánto queda por consumir de Power BI Premium,inventory
+consulta qué servicios licenciados tiene victor.diaz1132@empresas.com.pe,user_licenses
+consulta qué servicios licdos tiene maria.vega0067@empresas.com.pe,user_licenses
+quiero que miguel.gonzales0416@empresas.com.pe herede visio que ahora usa gabriela.sanchez1004@empresas.com.pe,reassign
+qué productos están vinculados a valeria.molina0398@empresas.com.pe,user_licenses
+haz que renato.salazar0664@empresas.com.pe pierda el acceso a Visio Plan 2,unassign
+cuánto queda por consumir de E5,inventory
+quiero recuperar la lic microsoft 365 f3 de jose.valdez0589@empresas.com.pe,unassign
+pon Visio Plan 2 a disposición de ricardo.fuentes1232@empresas.com.pe,assign
+haz que fiorella.flores0687@empresas.com.pe quede licenciado con PowerBI,assign
+haz que sofia.reyes1345@empresas.com.pe pierda el acceso a Windows 365,unassign
+quiero que eduardo.fernandez1295@empresas.com.pe herede Planner Project P3 que ahora usa melissa.medina1179@empresas.com.pe,reassign
+dime la ocupación actual de W365,inventory
+quiero que gonzalo.herrera1858@empresas.com.pe herede Microsoft 365 E5 que ahora usa claudia.navarro0941@empresas.com.pe,reassign
+retira del correo diana.lopez1485@empresas.com.pe el producto Power Automate Premium,unassign
+dime la ocupación actual de Visio Plan 2?,inventory
+haz que gabriela.valdez1029@empresas.com.pe quede licenciado con Cloud PC?,assign
+retira del correo natalia.valdez0869@empresas.com.pe el producto power automate premium,unassign
+estado de capacidad de P3,inventory
+la licencia Power Automate debe salir de rafael.sanchez0884@empresas.com.pe y terminar en diego.garcia0242@empresas.com.pe,reassign
+haz que sofia.molina1358@empresas.com.pe quede licenciado con Microsoft 365 E3,assign
+retira del correo carla.morales0791@empresas.com.pe el producto PowerBI,unassign
+quiero recuperar la licencia e5 de camila.reyes0465@empresas.com.pe,unassign
+hasta otro momento?,farewell
+qué productos están vinculados a oscar.morales1551@empresas.com.pe,user_licenses
+quiero recuperar la licencia Kiosk de ana.espinoza0148@empresas.com.pe,unassign
+quiero que maria.torres0046@empresas.com.pe herede Exchange Kiosk que ahora usa marco.cabrera1070@empresas.com.pe,reassign
+estado de capacidad de Power Automate?,inventory
+cuánto queda por consumir de Exchange P1,inventory
+cuánto queda por consumir de F3 FUSL,inventory
+qué productos están vinculados a martin.cruz1386@empresas.com.pe,user_licenses
+consulta qué servicios licenciados tiene carlos.fernandez0095@empresas.com.pe,user_licenses
+qué productos están vinculados a diego.aguilar0260@empresas.com.pe,user_licenses
+quiero recuperar la licencia exchange p2 de romina.rodriguez1883@empresas.com.pe,unassign
+cuánto queda por consumir de microsoft 365 f3?,inventory
+haz que diana.herrera1498@empresas.com.pe pierda el acceso a exchange kiosk,unassign
+necesito habilitarle F3 FUSL al correo carlos.palomino0116@empresas.com.pe,assign
+quiero recuperar la licencia Visio Plan 2 de micaela.garcia1562@empresas.com.pe,unassign
+haz que vanessa.espinoza1428@empresas.com.pe quede licenciado con visio p2,assign
+cambia el propietario de Project P3: victor.sanchez1124@empresas.com.pe por julio.rodriguez1763@empresas.com.pe,reassign
+necesito habilitarle P3 al correo victor.arias1153@empresas.com.pe,assign
+cambia el propietario de F3 FUSL: diego.benavides0280@empresas.com.pe por natalia.cruz0866@empresas.com.pe,reassign
+inventario personal de marco.sanchez1044@empresas.com.pe,user_licenses
+necesito habilitarle Exchange P2 al correo vanessa.cruz1426@empresas.com.pe,assign
+pon Microsoft 365 E3 a disposición de micaela.ortega1594@empresas.com.pe?,assign
+quiero que hector.chavez1694@empresas.com.pe herede Visio Plan 2 que ahora usa ana.rodriguez0123@empresas.com.pe,reassign
+cuánto queda por consumir de Windows 365,inventory
+qué productos están vinculados a nicole.perez1641@empresas.com.pe,user_licenses
+retira del correo ricardo.salazar1224@empresas.com.pe el producto Visio Plan 2,unassign
+la licencia f3 debe salir de eduardo.palomino1316@empresas.com.pe y terminar en julio.campos1783@empresas.com.pe,reassign
+estado de capacidad de Project P3?,inventory
+haz que sofia.ramirez1328@empresas.com.pe pierda el acceso a Planner Project P3,unassign
+cambia el propietario de Windows 365: sofia.rodriguez1323@empresas.com.pe por victor.cabrera1150@empresas.com.pe,reassign
+haz que vanessa.perez1401@empresas.com.pe pierda el acceso a Planner Project P3,unassign
+explícame la revolución francesa,out_of_scope
+quiero recuperar la licencia visio p2 de jose.perez0561@empresas.com.pe,unassign
+pon M365 F3 a disposición de julio.campos1783@empresas.com.pe,assign
+haz que diego.lopez0245@empresas.com.pe quede licenciado con M365 E5,assign
+consulta el rastro de operaciones?,audit
+necesito ayuda pero no sé qué operación?,ambiguous
+cuánto queda por consumir de Exchange P2,inventory
+necesito habilitarle Windows 365 al correo alonso.garcia0722@empresas.com.pe,assign
+cuánto queda por consumir de Visio Plan 2,inventory
+pon Microsoft 365 F3 a disposición de adriana.flores1727@empresas.com.pe,assign
+cambia el propietario de F3 FUSL: hector.acosta1717@empresas.com.pe por valeria.delgado0395@empresas.com.pe,reassign
+la licencia E3 debe salir de fernando.aguilar0980@empresas.com.pe y terminar en adriana.campos1743@empresas.com.pe,reassign
+quiero que claudia.cabrera0950@empresas.com.pe herede M365 E5 que ahora usa hector.silva1697@empresas.com.pe,reassign
+ESTADO DE CAPACIDAD DE POWER BI PREMIUM,inventory
+quiero que consulta.demo@empresas.com.pe herede M365 E5 que ahora usa adriana.delgado1755@empresas.com.pe,reassign
+estado de capacidad de Exchange Kiosk,inventory
+pon cloud pc a disposición de victor.gonzales1136@empresas.com.pe,assign
+quiero recuperar la licencia M365 E3 de jose.cabrera0590@empresas.com.pe,unassign
+qué productos están vinculados a paola.herrera0618@empresas.com.pe,user_licenses
+haz que miguel.castillo0411@empresas.com.pe quede licenciado con Power BI?,assign
+estado de capacidad de Exchange P2?,inventory
+quiero recuperar la licencia Windows 365 Enterprise de patricia.cardenas1279@empresas.com.pe,unassign
+quiero que raul.castillo1451@empresas.com.pe herede E5 que ahora usa fernando.salazar0984@empresas.com.pe,reassign
+la licencia Power Apps debe salir de marco.ortega1074@empresas.com.pe y terminar en carla.arias0793@empresas.com.pe,reassign
+estado de capacidad de Exchange P1,inventory
+haz que melissa.navarro1181@empresas.com.pe quede licenciado con Microsoft 365 F3,assign
+qué productos están vinculados a carlos.lopez0085@empresas.com.pe,user_licenses
+qué productos están vinculados a diana.cabrera1510@empresas.com.pe,user_licenses
+quiero recuperar la licencia F3 de victor.vega1147@empresas.com.pe,unassign
+qué productos están vinculados a paola.acosta0637@empresas.com.pe,user_licenses
+ESTADO DE CAPACIDAD DE W365,inventory
+retira del correo miguel.cruz0426@empresas.com.pe el producto W365,unassign
+haz que ximena.diaz1812@empresas.com.pe quede licenciado con Visio Plan 2,assign
+haz que maria.aguilar0060@empresas.com.pe pierda el acceso a m365 f3,unassign
+retira del correo juan.acosta0037@empresas.com.pe el producto M365 E3,unassign
+inventario personal de ricardo.perez1201@empresas.com.pe,user_licenses
+RETIRA DEL CORREO MELISSA.VALDEZ1189@EMPRESAS.COM.PE EL PRODUCTO WINDOWS 365 ENTERPRISE,unassign
+cuánto queda por consumir de e3,inventory
+consulta qué servicios licenciados tiene renato.rojas0650@empresas.com.pe,user_licenses
+cuánto queda por consumir de Exchange Online,inventory
+dime la ocupación actual de Microsoft 365 F3,inventory
+consulta qué servicios licenciados tiene jorge.cardenas0359@empresas.com.pe,user_licenses
+haz que gabriela.paredes1022@empresas.com.pe pierda el acceso a power apps premium,unassign
+qué productos están vinculados a luis.navarro0181@empresas.com.pe,user_licenses
+quiero recuperar la licencia windows 365 enterprise de raul.morales1471@empresas.com.pe,unassign
+cuánto queda por consumir de Power Apps Premium,inventory
+cambia el propietario de F3 FUSL: eduardo.cruz1306@empresas.com.pe por andrea.herrera0298@empresas.com.pe,reassign
+gracias me sirvió,thanks
+cuánto queda por consumir de Windows 365 Enterprise,inventory
+necesito habilitarle Microsoft 365 E3 al correo martin.arias1393@empresas.com.pe,assign
+pon exchange online a disposición de fernando.perez0961@empresas.com.pe,assign
+qué productos están vinculados a juan.salazar0024@empresas.com.pe,user_licenses
+pon kiosk a disposición de lucia.garcia0202@empresas.com.pe,assign
+quiero que bruno.medina1619@empresas.com.pe herede Visio P2 que ahora usa lucia.fuentes0232@empresas.com.pe,reassign
+haz que raul.cardenas1479@empresas.com.pe quede licenciado con M365 E3,assign
+RETIRA DEL CORREO JOSE.ARIAS0593@EMPRESAS.COM.PE EL PRODUCTO POWER AUTOMATE,unassign
+dime la ocupación actual de EOA,inventory
+quiero recuperar la lic E5 de vanessa.rodriguez1403@empresas.com.pe,unassign
+quiero que camila.molina0478@empresas.com.pe herede kiosk que ahora usa jose.mendoza0573@empresas.com.pe,reassign
+inventario personal de gonzalo.diaz1852@empresas.com.pe,user_licenses
+dime el tiempo de mañana,out_of_scope
+estado de capacidad de Power Apps Premium,inventory
+inventario personal de valeria.benavides0400@empresas.com.pe?,user_licenses
+haz que victor.medina1139@empresas.com.pe pierda el acceso a Power Automate,unassign
+haz que natalia.reyes0865@empresas.com.pe pierda el acceso a Exchange Kiosk,unassign
+haz que alejandra.reyes1105@empresas.com.pe quede licenciado con windows 365 enterprise,assign
+retira del correo paola.lopez0605@empresas.com.pe el producto Windows 365 Enterprise,unassign
+pon Power Apps Premium a disposición de marco.benavides1080@empresas.com.pe,assign
+haz que juan.aguilar0020@empresas.com.pe pierda el acceso a Exchange Kiosk?,unassign
+estado de capacidad de kiosk,inventory
+cuánto queda por consumir de Planner Project P3,inventory
+cuánto queda por consumir de f3,inventory
+haz que jose.morales0591@empresas.com.pe pierda el acceso a Visio P2,unassign
+dime la ocupación actual de E5 Unified,inventory
+haz que paola.cabrera0630@empresas.com.pe quede licenciado con Power BI Premium,assign
+qué productos están vinculados a julio.cabrera1790@empresas.com.pe,user_licenses
+buenas lic,greeting
+estado de capacidad de visio,inventory
+qué puedo gestionar desde este chat,capabilities
+cambia el propietario de Exchange P1: camila.reyes0465@empresas.com.pe por patricia.herrera1258@empresas.com.pe,reassign
+necesito habilitarle W365 al correo sofia.mendoza1333@empresas.com.pe,assign
+la lic Kiosk debe salir de victor.salazar1144@empresas.com.pe y terminar en carla.castillo0771@empresas.com.pe,reassign
+consulta qué servicios licenciados tiene eduardo.molina1318@empresas.com.pe,user_licenses
+quiero que juan.acosta0037@empresas.com.pe herede power automate premium que ahora usa raul.gonzales1456@empresas.com.pe,reassign
+pon PowerBI a disposición de sofia.vargas1329@empresas.com.pe,assign
+qué lics reconoce la plataforma?,catalog
+consulta qué servicios licenciados tiene renato.vega0667@empresas.com.pe,user_licenses
+qué productos están vinculados a luis.perez0161@empresas.com.pe,user_licenses
+estado de capacidad de Power BI Premium?,inventory
+inventario personal de eduardo.herrera1298@empresas.com.pe?,user_licenses
+HAZ QUE MARIA.ACOSTA0077@EMPRESAS.COM.PE PIERDA EL ACCESO A PLANNER PROJECT P3,unassign
+la licencia PowerBI Premium debe salir de rafael.mendoza0893@empresas.com.pe y terminar en juan.reyes0025@empresas.com.pe,reassign
+dime la ocupación actual de Windows 365 Enterprise,inventory
+dime la ocupación actual de F3 FUSL,inventory
+inventario personal de victor.rodriguez1123@empresas.com.pe,user_licenses
+retira del correo gonzalo.vargas1849@empresas.com.pe el producto E5?,unassign
+necesito habilitarle Microsoft 365 F3 al correo alejandra.reyes1105@empresas.com.pe,assign
+quiero que adriana.mendoza1733@empresas.com.pe herede Exchange Kiosk que ahora usa patricia.cabrera1270@empresas.com.pe,reassign
+CAMBIA EL PROPIETARIO DE POWER AUTOMATE PREMIUM: LUCIA.PEREZ0201@EMPRESAS.COM.PE POR BRUNO.VEGA1627@EMPRESAS.COM.PE,reassign
+estado de capacidad de Cloud PC,inventory
+estado de capacidad de m365 e3,inventory
+pon PowerBI Premium a disposición de gonzalo.delgado1875@empresas.com.pe?,assign
+quiero que daniela.flores0527@empresas.com.pe herede Microsoft 365 E3 que ahora usa martin.valdez1389@empresas.com.pe,reassign
+inventario personal de oscar.fernandez1535@empresas.com.pe,user_licenses
+haz que andrea.garcia0282@empresas.com.pe quede licenciado con M365 E3,assign
+cuánto queda por consumir de Power Automate Premium,inventory
+consulta el rastro de operaciones,audit
+la licencia Power Automate Premium debe salir de nicole.medina1659@empresas.com.pe y terminar en jose.mendoza0573@empresas.com.pe,reassign
+buenas licencia,greeting
+retira del correo vanessa.medina1419@empresas.com.pe el producto e5?,unassign
+la lic microsoft 365 e5 debe salir de melissa.flores1167@empresas.com.pe y terminar en fiorella.salazar0704@empresas.com.pe,reassign
+LA LICENCIA E5 DEBE SALIR DE PEDRO.ACOSTA0517@EMPRESAS.COM.PE Y TERMINAR EN LUCIA.CHAVEZ0214@EMPRESAS.COM.PE,reassign
+hola qué tal?,greeting
+haz que miguel.espinoza0428@empresas.com.pe quede licenciado con power apps,assign
+inventario personal de paola.garcia0602@empresas.com.pe,user_licenses
+necesito habilitarle Planner Project P3 al correo fernando.castillo0971@empresas.com.pe,assign
+cuánto queda por consumir de W365,inventory
+haz que nicole.cabrera1670@empresas.com.pe pierda el acceso a PowerBI,unassign
+quiero que claudia.sanchez0924@empresas.com.pe herede E5 que ahora usa ana.rodriguez0123@empresas.com.pe,reassign
+necesito habilitarle M365 F3 al correo gonzalo.lopez1845@empresas.com.pe,assign
+haz que victor.herrera1138@empresas.com.pe quede licenciado con M365 F3,assign
+quiero que sergio.navarro0821@empresas.com.pe herede powerbi que ahora usa diego.perez0241@empresas.com.pe?,reassign
+dime la ocupación actual de Microsoft 365 E5?,inventory
+dime la ocupación actual de Exchange Kiosk,inventory
+quiero que rafael.torres0886@empresas.com.pe herede Planner Project P3 que ahora usa raul.lopez1445@empresas.com.pe,reassign
+inventario personal de jorge.gonzales0336@empresas.com.pe,user_licenses
+haz que alejandra.chavez1094@empresas.com.pe pierda el acceso a P3,unassign
+haz que gabriela.ramirez1008@empresas.com.pe pierda el acceso a power apps?,unassign
+estado de capacidad de Power BI,inventory
+qué productos están vinculados a julio.vargas1769@empresas.com.pe,user_licenses
+haz que vanessa.garcia1402@empresas.com.pe pierda el acceso a PowerBI,unassign
+quiero recuperar la licencia Exchange P2 de andrea.diaz0292@empresas.com.pe,unassign
+cambia el propietario de Windows 365: martin.palomino1396@empresas.com.pe por marco.palomino1076@empresas.com.pe,reassign
+cuánto queda por consumir de Microsoft 365 E3?,inventory
+haz que patricia.ramirez1248@empresas.com.pe quede licenciado con windows 365 enterprise,assign
+pon W365 a disposición de ricardo.silva1217@empresas.com.pe,assign
+la lic Planner Project P3 debe salir de sofia.sanchez1324@empresas.com.pe y terminar en ana.acosta0157@empresas.com.pe,reassign
+necesito habilitarle PowerBI al correo andrea.cruz0306@empresas.com.pe,assign
+quiero recuperar la lic exchange kiosk de ximena.salazar1824@empresas.com.pe?,unassign
+haz que claudia.castillo0931@empresas.com.pe pierda el acceso a Exchange Kiosk,unassign
+quiero que carla.morales0791@empresas.com.pe herede EOA que ahora usa rafael.aguilar0900@empresas.com.pe,reassign
+dime la ocupación actual de Power Automate,inventory
+pon Visio P2 a disposición de melissa.palomino1196@empresas.com.pe,assign
+cómo va tu día,wellbeing
+inventario personal de diana.chavez1494@empresas.com.pe,user_licenses
+la licencia Microsoft 365 E5 debe salir de micaela.delgado1595@empresas.com.pe y terminar en alejandra.mendoza1093@empresas.com.pe,reassign
+dime la ocupación actual de E3,inventory
+cuál es la capital de alemania,out_of_scope
+pon Windows 365 Enterprise a disposición de martin.fuentes1392@empresas.com.pe,assign
+retira del correo julio.cruz1786@empresas.com.pe el producto Microsoft 365 E5,unassign
+quiero que luis.arias0193@empresas.com.pe herede Power Apps Premium que ahora usa jose.herrera0578@empresas.com.pe,reassign
+qué productos están vinculados a jose.chavez0574@empresas.com.pe,user_licenses
+estado de capacidad de F3 FUSL,inventory
+consulta qué servicios licenciados tiene carla.arias0793@empresas.com.pe,user_licenses
+pon Exchange P2 a disposición de claudia.campos0943@empresas.com.pe,assign
+estado de capacidad de M365 E5,inventory
+retira del correo julio.delgado1795@empresas.com.pe el producto Power BI,unassign
+dime la ocupación actual de M365 E3,inventory
+inventario personal de paola.rodriguez0603@empresas.com.pe,user_licenses
+inventario personal de nicole.arias1673@empresas.com.pe,user_licenses
+quiero que hector.salazar1704@empresas.com.pe herede Exchange Kiosk que ahora usa sergio.gonzales0816@empresas.com.pe,reassign
+haz que luis.chavez0174@empresas.com.pe pierda el acceso a Microsoft 365 E3,unassign
+cambia el propietario de F3: luis.vega0187@empresas.com.pe por ximena.rodriguez1803@empresas.com.pe,reassign
+hasta otro momento,farewell
+haz que adriana.sanchez1724@empresas.com.pe quede licenciado con E3,assign
+tengo que hacer una gestión de lic,ambiguous
+inventario personal de renato.sanchez0644@empresas.com.pe,user_licenses
+quiero que maria.valdez0069@empresas.com.pe herede W365 que ahora usa alonso.cruz0746@empresas.com.pe,reassign
+cambia el propietario de Project P3: renato.aguilar0660@empresas.com.pe por pedro.vega0507@empresas.com.pe,reassign
+estado de capacidad de Planner Project P3,inventory
+necesito habilitarle m365 e5 al correo valeria.arias0393@empresas.com.pe,assign
+cambia el propietario de f3: rafael.diaz0892@empresas.com.pe por oscar.delgado1555@empresas.com.pe,reassign
+qué productos están vinculados a sofia.herrera1338@empresas.com.pe,user_licenses
+HAZ QUE RAFAEL.DIAZ0892@EMPRESAS.COM.PE PIERDA EL ACCESO A VISIO PLAN 2,unassign
+qué soporte me das con las lics?,capabilities
+cuánto queda por consumir de Microsoft 365 E3,inventory
+quiero que maria.garcia0042@empresas.com.pe herede Visio que ahora usa raul.vargas1449@empresas.com.pe,reassign
+cambia el propietario de Power Apps: andrea.paredes0302@empresas.com.pe por raul.sanchez1444@empresas.com.pe,reassign
+dime la ocupación actual de w365?,inventory
+QUIERO QUE VANESSA.PALOMINO1436@EMPRESAS.COM.PE HEREDE E5 UNIFIED QUE AHORA USA DIANA.GARCIA1482@EMPRESAS.COM.PE,reassign
+quiero que vanessa.diaz1412@empresas.com.pe herede PowerBI que ahora usa andrea.morales0311@empresas.com.pe,reassign
+haz que maria.vargas0049@empresas.com.pe quede licenciado con Power Automate Premium,assign
+pon Power Automate a disposición de ana.fernandez0135@empresas.com.pe,assign
+retira del correo martin.perez1361@empresas.com.pe el producto exchange kiosk,unassign
+cambia el propietario de Microsoft 365 E3: carla.chavez0774@empresas.com.pe por maria.delgado0075@empresas.com.pe,reassign
+dime la ocupación actual de M365 E3?,inventory
+haz que vanessa.fuentes1432@empresas.com.pe pierda el acceso a PowerBI Premium,unassign
+pon Project P3 a disposición de ana.fuentes0152@empresas.com.pe,assign
+dime la ocupación actual de Exchange P2,inventory
+quiero que andrea.valdez0309@empresas.com.pe herede F3 que ahora usa lucia.herrera0218@empresas.com.pe,reassign
+INVENTARIO PERSONAL DE BRUNO.REYES1625@EMPRESAS.COM.PE,user_licenses
+estado de capacidad de power apps,inventory
+inventario personal de pedro.fernandez0495@empresas.com.pe,user_licenses
+dime la ocupación actual de Exchange Online,inventory
+estado de capacidad de M365 F3,inventory
+haz que sergio.cabrera0830@empresas.com.pe pierda el acceso a Microsoft 365 E3,unassign
+necesito habilitarle Microsoft 365 E5 al correo oscar.sanchez1524@empresas.com.pe,assign
+estado de capacidad de windows 365,inventory
+retira del correo melissa.aguilar1180@empresas.com.pe el producto E3,unassign
+cambia el propietario de Exchange P2: oscar.cabrera1550@empresas.com.pe por patricia.rodriguez1243@empresas.com.pe,reassign
+consulta qué servicios licenciados tiene alonso.torres0726@empresas.com.pe,user_licenses
+haz que rafael.espinoza0908@empresas.com.pe quede licenciado con E5,assign
+haz que jorge.salazar0344@empresas.com.pe pierda el acceso a PowerBI?,unassign
+consulta qué servicios licenciados tiene oscar.perez1521@empresas.com.pe,user_licenses
+quiero recuperar la licencia power apps de natalia.molina0878@empresas.com.pe,unassign
+haz que paola.aguilar0620@empresas.com.pe pierda el acceso a Power BI Premium,unassign
+necesito ayuda pero no sé qué operación,ambiguous
+qué productos están vinculados a patricia.cabrera1270@empresas.com.pe,user_licenses
+qué productos están vinculados a oscar.cabrera1550@empresas.com.pe,user_licenses
+inventario personal de jose.torres0566@empresas.com.pe?,user_licenses
+qué pasó entre perú y chile en la guerra?,out_of_scope
+la licencia F3 debe salir de andrea.ortega0314@empresas.com.pe y terminar en jorge.rodriguez0323@empresas.com.pe,reassign
+la licencia e3 debe salir de gonzalo.ortega1874@empresas.com.pe y terminar en rafael.espinoza0908@empresas.com.pe,reassign
+QUIERO RECUPERAR LA LICENCIA POWERBI DE ANDREA.CAMPOS0303@EMPRESAS.COM.PE,unassign
+necesito habilitarle Exchange P1 al correo julio.delgado1795@empresas.com.pe,assign
+quiero que vanessa.espinoza1428@empresas.com.pe herede e5 que ahora usa paola.reyes0625@empresas.com.pe,reassign
+necesito habilitarle Power Automate al correo adriana.molina1758@empresas.com.pe,assign
+la licencia P3 debe salir de ximena.rodriguez1803@empresas.com.pe y terminar en ximena.medina1819@empresas.com.pe?,reassign
+pon PowerBI a disposición de ximena.gonzales1816@empresas.com.pe,assign
+estado de capacidad de EOA,inventory
+haz que micaela.rodriguez1563@empresas.com.pe quede licenciado con Visio Plan 2,assign
+cuánto queda por consumir de Windows 365 Enterprise?,inventory
+cambia el propietario de powerbi: eduardo.perez1281@empresas.com.pe por fiorella.rojas0690@empresas.com.pe,reassign
+haz que miguel.salazar0424@empresas.com.pe quede licenciado con Power Apps,assign
+CAMBIA EL PROPIETARIO DE EXCHANGE ONLINE: CLAUDIA.REYES0945@EMPRESAS.COM.PE POR JOSE.VALDEZ0589@EMPRESAS.COM.PE?,reassign
+cuánto queda por consumir de Visio P2,inventory
+qué productos están vinculados a camila.paredes0462@empresas.com.pe,user_licenses
+consulta qué servicios licenciados tiene gabriela.sanchez1004@empresas.com.pe,user_licenses
+explícame la revolución francesa?,out_of_scope
+inventario personal de fernando.chavez0974@empresas.com.pe,user_licenses
+cambia el propietario de Visio: gabriela.espinoza1028@empresas.com.pe por jorge.paredes0342@empresas.com.pe,reassign
+retira del correo paola.salazar0624@empresas.com.pe el producto Exchange Kiosk,unassign
+quiero que andrea.cardenas0319@empresas.com.pe herede Exchange Kiosk que ahora usa raul.valdez1469@empresas.com.pe,reassign
+haz que alonso.silva0737@empresas.com.pe quede licenciado con Visio,assign
+la licencia M365 F3 debe salir de lucia.vargas0209@empresas.com.pe y terminar en patricia.molina1278@empresas.com.pe,reassign
+dime la ocupación actual de Power Apps,inventory
+quiero recuperar la licencia project p3 de martin.ortega1394@empresas.com.pe,unassign
+cambia el propietario de Visio P2: juan.rodriguez0003@empresas.com.pe por valeria.aguilar0380@empresas.com.pe,reassign
+quiero recuperar la licencia Exchange Online de adriana.acosta1757@empresas.com.pe,unassign
+estado de capacidad de Project P3,inventory
+qué productos están vinculados a gabriela.ortega1034@empresas.com.pe,user_licenses
+dime la ocupación actual de E5 Unified?,inventory
+la licencia Microsoft 365 F3 debe salir de gabriela.valdez1029@empresas.com.pe y terminar en paola.torres0606@empresas.com.pe,reassign
+cambia el propietario de M365 F3: luis.arias0193@empresas.com.pe por pedro.arias0513@empresas.com.pe,reassign
+haz que oscar.cardenas1559@empresas.com.pe quede licenciado con e5 unified,assign
+la lic F3 debe salir de nicole.aguilar1660@empresas.com.pe y terminar en diana.ramirez1488@empresas.com.pe,reassign
+cuánto queda por consumir de Visio,inventory
+haz que adriana.molina1758@empresas.com.pe quede licenciado con Planner Project P3?,assign
+cuánto queda por consumir de exchange kiosk,inventory
+quiero recuperar la licencia Windows 365 Enterprise de renato.aguilar0660@empresas.com.pe,unassign
+quiero recuperar la licencia Power Apps de nicole.salazar1664@empresas.com.pe,unassign
+cambia el propietario de W365: patricia.castillo1251@empresas.com.pe por martin.ortega1394@empresas.com.pe,reassign
+inventario personal de lucia.sanchez0204@empresas.com.pe,user_licenses
+haz que micaela.morales1591@empresas.com.pe quede licenciado con Power Automate Premium,assign
+NECESITO HABILITARLE F3 FUSL AL CORREO VALERIA.SANCHEZ0364@EMPRESAS.COM.PE,assign
+necesito habilitarle Power Automate al correo melissa.herrera1178@empresas.com.pe,assign
+quiero que adriana.lopez1725@empresas.com.pe herede Power Automate Premium que ahora usa martin.lopez1365@empresas.com.pe,reassign
+la lic Exchange P2 debe salir de ana.espinoza0148@empresas.com.pe y terminar en hector.benavides1720@empresas.com.pe,reassign
+inventario personal de victor.vargas1129@empresas.com.pe,user_licenses
+pon EOA a disposición de bruno.sanchez1604@empresas.com.pe,assign
+qué pasó entre perú y chile en la guerra,out_of_scope
+haz que gabriela.lopez1005@empresas.com.pe pierda el acceso a F3 FUSL,unassign
+cuánto queda por consumir de EOA,inventory
+haz que camila.benavides0480@empresas.com.pe pierda el acceso a Power BI Premium,unassign
+inventario personal de maria.sanchez0044@empresas.com.pe,user_licenses
+cambia el propietario de Power Automate Premium: bruno.rojas1610@empresas.com.pe por alejandra.espinoza1108@empresas.com.pe,reassign
+qué productos están vinculados a valeria.castillo0371@empresas.com.pe,user_licenses
+qué productos están vinculados a claudia.cardenas0959@empresas.com.pe,user_licenses
+cambia el propietario de Microsoft 365 F3: fernando.rodriguez0963@empresas.com.pe por gabriela.gonzales1016@empresas.com.pe,reassign
+la licencia Kiosk debe salir de alonso.perez0721@empresas.com.pe y terminar en pedro.herrera0498@empresas.com.pe,reassign
+cambia el propietario de kiosk: andrea.medina0299@empresas.com.pe por ana.rodriguez0123@empresas.com.pe,reassign
+qué productos están vinculados a ximena.silva1817@empresas.com.pe,user_licenses
+cambia el propietario de windows 365 enterprise: jose.fernandez0575@empresas.com.pe por luis.mendoza0173@empresas.com.pe,reassign
+consulta qué servicios licenciados tiene renato.mendoza0653@empresas.com.pe,user_licenses
+consulta qué servicios licenciados tiene rafael.gonzales0896@empresas.com.pe,user_licenses
+necesito habilitarle Power Automate al correo marco.perez1041@empresas.com.pe,assign
+haz que julio.flores1767@empresas.com.pe quede licenciado con Planner Project P3,assign
+qué productos están vinculados a andrea.fernandez0295@empresas.com.pe,user_licenses
+inventario personal de paola.castillo0611@empresas.com.pe,user_licenses
+cuánto queda por consumir de Exchange P1?,inventory
+cuánto queda por consumir de P3,inventory
+haz que daniela.cabrera0550@empresas.com.pe quede licdo con exchange p1?,assign
+qué productos están vinculados a alejandra.rojas1090@empresas.com.pe,user_licenses
+tengo que hacer una gestión de lic?,ambiguous
+haz que natalia.medina0859@empresas.com.pe pierda el acceso a microsoft 365 e3,unassign
+CONSULTA QUÉ SERVICIOS LICENCIADOS TIENE FIORELLA.ARIAS0713@EMPRESAS.COM.PE,user_licenses
+quiero recuperar la licencia Visio de miguel.salazar0424@empresas.com.pe,unassign
+cambia el propietario de Exchange Online: fiorella.mendoza0693@empresas.com.pe por juan.ramirez0008@empresas.com.pe?,reassign
+cambia el propietario de Windows 365: alejandra.palomino1116@empresas.com.pe por luis.flores0167@empresas.com.pe,reassign
+qué productos están vinculados a andrea.valdez0309@empresas.com.pe,user_licenses
+inventario personal de carla.valdez0789@empresas.com.pe,user_licenses
+buenas LicencIA?,greeting
+dime la ocupación actual de Cloud PC,inventory
+consulta qué servicios licenciados tiene ricardo.rojas1210@empresas.com.pe,user_licenses
+pon Microsoft 365 F3 a disposición de alonso.vega0747@empresas.com.pe,assign
+haz que daniela.espinoza0548@empresas.com.pe pierda el acceso a Microsoft 365 E5,unassign
+consulta qué servicios licenciados tiene patricia.delgado1275@empresas.com.pe,user_licenses
+haz que fiorella.perez0681@empresas.com.pe pierda el acceso a visio plan 2,unassign
+estado de capacidad de Power Automate,inventory
+estado de capacidad de F3,inventory
+haz que ana.palomino0156@empresas.com.pe pierda el acceso a cloud pc,unassign
+consulta qué servicios licenciados tiene micaela.medina1579@empresas.com.pe,user_licenses
+pon microsoft 365 f3 a disposición de victor.salazar1144@empresas.com.pe?,assign
+qué lics reconoce la plataforma,catalog
+dime la ocupación actual de Visio,inventory
+cuánto queda por consumir de cloud pc,inventory
+estado de capacidad de Visio Plan 2,inventory
+haz que alejandra.morales1111@empresas.com.pe quede licenciado con Power BI,assign
+cuánto queda por consumir de Kiosk,inventory
+pon Exchange Kiosk a disposición de sofia.cabrera1350@empresas.com.pe,assign
+qué equipo ganó ayer?,out_of_scope
+QUÉ LICENCIAS RECONOCE LA PLATAFORMA,catalog
+quiero recuperar la licencia Exchange P1 de maria.ramirez0048@empresas.com.pe,unassign
+haz que eduardo.fuentes1312@empresas.com.pe quede licenciado con Planner Project P3,assign
+retira del correo raul.cruz1466@empresas.com.pe el producto planner project p3,unassign
+consulta qué servicios licenciados tiene jose.acosta0597@empresas.com.pe,user_licenses
+la licencia F3 debe salir de camila.rojas0450@empresas.com.pe y terminar en claudia.flores0927@empresas.com.pe,reassign
+haz que jose.castillo0571@empresas.com.pe pierda el acceso a PowerBI?,unassign
+cuánto queda por consumir de M365 F3,inventory
+pon m365 f3 a disposición de oscar.garcia1522@empresas.com.pe,assign
+qué productos están vinculados a jorge.delgado0355@empresas.com.pe,user_licenses
+haz que jorge.navarro0341@empresas.com.pe quede licenciado con eoa,assign
+estado de capacidad de exchange p2,inventory
+estado de capacidad de PowerBI Premium,inventory
+consulta qué servicios licenciados tiene melissa.ortega1194@empresas.com.pe?,user_licenses
+DIME LA OCUPACIÓN ACTUAL DE POWER BI,inventory
+estado de capacidad de Exchange Online,inventory
+CUÁNTO QUEDA POR CONSUMIR DE E5 UNIFIED,inventory
+estado de capacidad de microsoft 365 f3,inventory
+retira del correo ana.benavides0160@empresas.com.pe el producto E5 Unified,unassign
+qué productos están vinculados a eduardo.medina1299@empresas.com.pe,user_licenses
+consulta qué servicios licdos tiene ana.rodriguez0123@empresas.com.pe,user_licenses
+cómo va tu día?,wellbeing
+estado de capacidad de Microsoft 365 E5?,inventory
+retira del correo carla.ortega0794@empresas.com.pe el producto E3,unassign
+haz que gabriela.acosta1037@empresas.com.pe quede licenciado con Kiosk?,assign
+haz que camila.aguilar0460@empresas.com.pe pierda el acceso a E5?,unassign
+la licencia Visio debe salir de julio.cruz1786@empresas.com.pe y terminar en andrea.molina0318@empresas.com.pe,reassign
+la licencia Planner Project P3 debe salir de natalia.rojas0850@empresas.com.pe y terminar en pedro.campos0503@empresas.com.pe?,reassign
+inventario personal de bruno.mendoza1613@empresas.com.pe,user_licenses
+HAZ QUE RENATO.VALDEZ0669@EMPRESAS.COM.PE PIERDA EL ACCESO A E5 UNIFIED,unassign
+DIME LA OCUPACIÓN ACTUAL DE VISIO?,inventory
+pon f3 fusl a disposición de fernando.cardenas0999@empresas.com.pe,assign
+hazme una receta de postre,out_of_scope
+dime el tiempo de mañana?,out_of_scope
+quiero recuperar la licencia windows 365 enterprise de andrea.chavez0294@empresas.com.pe,unassign
+dime la ocupación actual de EOA?,inventory
+retira del correo victor.navarro1141@empresas.com.pe el producto Microsoft 365 F3,unassign
+quiero recuperar la licencia Power Automate de diana.perez1481@empresas.com.pe,unassign
+qué productos están vinculados a alejandra.vega1107@empresas.com.pe,user_licenses
+cuánto queda por consumir de Power BI Premium?,inventory
+INVENTARIO PERSONAL DE ALONSO.SILVA0737@EMPRESAS.COM.PE,user_licenses
+dime la ocupación actual de P3,inventory
+inventario personal de melissa.fuentes1192@empresas.com.pe,user_licenses
+cuánto queda por consumir de Power Apps,inventory
+CAMBIA EL PROPIETARIO DE M365 E3: ANA.CARDENAS0159@EMPRESAS.COM.PE POR DIANA.MORALES1511@EMPRESAS.COM.PE,reassign
+inventario personal de daniela.vargas0529@empresas.com.pe,user_licenses
+quiero que ximena.silva1817@empresas.com.pe herede Exchange P1 que ahora usa martin.vega1387@empresas.com.pe,reassign
+consulta qué servicios licenciados tiene jorge.navarro0341@empresas.com.pe?,user_licenses
+quiero que renato.herrera0658@empresas.com.pe herede F3 que ahora usa lucia.lopez0205@empresas.com.pe,reassign
+haz que jorge.lopez0325@empresas.com.pe quede licenciado con P3,assign
+pon Power Apps a disposición de julio.cabrera1790@empresas.com.pe,assign
+pon Power Apps Premium a disposición de miguel.fernandez0415@empresas.com.pe,assign
+dime la ocupación actual de Project P3,inventory
+retira del correo patricia.herrera1258@empresas.com.pe el producto P3,unassign
+haz que melissa.flores1167@empresas.com.pe pierda el acceso a Power Automate,unassign
+QUÉ LICENCIAS RECONOCE LA PLATAFORMA?,catalog
+consulta qué servicios licenciados tiene andrea.herrera0298@empresas.com.pe,user_licenses
+inventario personal de romina.garcia1882@empresas.com.pe,user_licenses
+qué soporte me das con las licencias,capabilities
+dime la ocupación actual de E5,inventory
+dime la ocupación actual de Power Apps Premium,inventory
+quiero recuperar la licencia Cloud PC de andrea.morales0311@empresas.com.pe,unassign
+quiero que paola.garcia0602@empresas.com.pe herede EOA que ahora usa hector.chavez1694@empresas.com.pe,reassign
+haz que carla.rojas0770@empresas.com.pe pierda el acceso a visio plan 2,unassign
+inventario personal de diego.flores0247@empresas.com.pe,user_licenses
+haz que andrea.aguilar0300@empresas.com.pe quede licenciado con Visio,assign
+haz que ana.perez0121@empresas.com.pe pierda el acceso a Windows 365 Enterprise,unassign
+qué soporte me das con las lics,capabilities
+necesito habilitarle e3 al correo hector.gonzales1696@empresas.com.pe,assign
+haz que valeria.torres0366@empresas.com.pe quede licenciado con Microsoft 365 F3,assign
+qué productos están vinculados a maria.cabrera0070@empresas.com.pe,user_licenses
+QUIERO QUE RAUL.VEGA1467@EMPRESAS.COM.PE HEREDE EXCHANGE KIOSK QUE AHORA USA RICARDO.SANCHEZ1204@EMPRESAS.COM.PE,reassign
+TODO CORRECTO CONTIGO?,wellbeing
+retira del correo victor.rojas1130@empresas.com.pe el producto Exchange P2,unassign
+qué productos están vinculados a valeria.rojas0370@empresas.com.pe,user_licenses
+haz que vanessa.fuentes1432@empresas.com.pe pierda el acceso a W365,unassign
+haz que daniela.cruz0546@empresas.com.pe quede licenciado con powerbi,assign
+quiero que jorge.molina0358@empresas.com.pe herede power automate premium que ahora usa eduardo.flores1287@empresas.com.pe,reassign
+estado de capacidad de windows 365 enterprise,inventory
+haz que carla.ortega0794@empresas.com.pe quede licenciado con p3,assign
+inventario personal de diana.fernandez1495@empresas.com.pe,user_licenses
+consulta qué servicios licenciados tiene marco.cabrera1070@empresas.com.pe,user_licenses
+quiero que sofia.navarro1341@empresas.com.pe herede M365 E5 que ahora usa sergio.mendoza0813@empresas.com.pe?,reassign
+haz que diego.castillo0251@empresas.com.pe pierda el acceso a F3,unassign
+la licencia f3 debe salir de paola.medina0619@empresas.com.pe y terminar en vanessa.gonzales1416@empresas.com.pe,reassign
+haz que valeria.fuentes0392@empresas.com.pe quede licenciado con kiosk,assign
+la licencia Project P3 debe salir de claudia.ramirez0928@empresas.com.pe y terminar en lucia.morales0231@empresas.com.pe,reassign
+haz que alejandra.fuentes1112@empresas.com.pe pierda el acceso a E5?,unassign
+cambia el propietario de Power Automate Premium: jorge.herrera0338@empresas.com.pe por miguel.cardenas0439@empresas.com.pe,reassign
+pon E5 Unified a disposición de daniela.benavides0560@empresas.com.pe,assign
+la licencia Visio Plan 2 debe salir de fiorella.rodriguez0683@empresas.com.pe y terminar en jorge.garcia0322@empresas.com.pe,reassign
+la licencia Exchange P1 debe salir de alejandra.fernandez1095@empresas.com.pe y terminar en renato.medina0659@empresas.com.pe,reassign
+dime la ocupación actual de Planner Project P3,inventory
+inventario personal de pedro.chavez0494@empresas.com.pe,user_licenses
+estado de capacidad de E5 Unified,inventory
+necesito habilitarle F3 al correo lucia.vega0227@empresas.com.pe,assign
+pon kiosk a disposición de julio.arias1793@empresas.com.pe,assign
+la licencia E5 debe salir de gabriela.cruz1026@empresas.com.pe y terminar en luis.vargas0169@empresas.com.pe,reassign
+inventario personal de daniela.palomino0556@empresas.com.pe,user_licenses
+la licencia Microsoft 365 E5 debe salir de valeria.aguilar0380@empresas.com.pe y terminar en oscar.cruz1546@empresas.com.pe,reassign
+hazme una receta de postre?,out_of_scope
+consulta qué servicios licdos tiene patricia.paredes1262@empresas.com.pe,user_licenses
+inventario personal de maria.campos0063@empresas.com.pe,user_licenses
+necesito habilitarle Exchange Kiosk al correo lucia.perez0201@empresas.com.pe,assign
+qué productos están vinculados a lucia.fuentes0232@empresas.com.pe,user_licenses
+la lic E5 debe salir de camila.garcia0442@empresas.com.pe y terminar en fiorella.lopez0685@empresas.com.pe,reassign
+estado de capacidad de Microsoft 365 E3,inventory
+qué productos están cargados en el sistema,catalog
+retira del correo martin.silva1377@empresas.com.pe el producto Microsoft 365 E3,unassign
+quiero que gonzalo.rojas1850@empresas.com.pe herede W365 que ahora usa eduardo.ramirez1288@empresas.com.pe?,reassign
+dime la ocupación actual de power automate premium,inventory
+pon P3 a disposición de fiorella.mendoza0693@empresas.com.pe,assign
+estado de capacidad de E5,inventory
+haz que nicole.arias1673@empresas.com.pe pierda el acceso a Windows 365 Enterprise,unassign
+haz que pedro.diaz0492@empresas.com.pe pierda el acceso a Microsoft 365 E5,unassign
+haz que juan.mendoza0013@empresas.com.pe quede licenciado con e3,assign
+qué productos están vinculados a eduardo.espinoza1308@empresas.com.pe,user_licenses
+cuánto queda por consumir de M365 E3?,inventory
+quiero que sofia.mendoza1333@empresas.com.pe herede Visio P2 que ahora usa rafael.rojas0890@empresas.com.pe,reassign
+haz que diana.lopez1485@empresas.com.pe pierda el acceso a Exchange P2,unassign
+dime la ocupación actual de Microsoft 365 E5,inventory
+quiero recuperar la licencia Microsoft 365 E3 de maria.delgado0075@empresas.com.pe,unassign
+qué productos están vinculados a melissa.paredes1182@empresas.com.pe,user_licenses
+LA LICENCIA MICROSOFT 365 E3 DEBE SALIR DE ALONSO.MEDINA0739@EMPRESAS.COM.PE Y TERMINAR EN PATRICIA.CHAVEZ1254@EMPRESAS.COM.PE,reassign
+haz que martin.medina1379@empresas.com.pe pierda el acceso a e5 unified,unassign
+quiero que patricia.gonzales1256@empresas.com.pe herede Windows 365 que ahora usa alejandra.herrera1098@empresas.com.pe,reassign
+INVENTARIO PERSONAL DE FIORELLA.SILVA0697@EMPRESAS.COM.PE?,user_licenses
+retira del correo miguel.vargas0409@empresas.com.pe el producto Exchange P1,unassign
+retira del correo diana.gonzales1496@empresas.com.pe el producto W365,unassign
+quiero recuperar la licencia PowerBI de daniela.perez0521@empresas.com.pe,unassign
+qué productos están cargados en el sistema?,catalog
+qué productos están vinculados a lucia.torres0206@empresas.com.pe,user_licenses
+necesito habilitarle E3 al correo victor.delgado1155@empresas.com.pe,assign
+cuánto queda por consumir de Visio P2?,inventory
+consulta qué servicios licenciados tiene micaela.cabrera1590@empresas.com.pe,user_licenses
+consulta qué servicios licenciados tiene carlos.gonzales0096@empresas.com.pe,user_licenses
+inventario personal de lucia.gonzales0216@empresas.com.pe,user_licenses
+retira del correo hector.cruz1706@empresas.com.pe el producto Cloud PC,unassign
+necesito habilitarle W365 al correo juan.rojas0010@empresas.com.pe,assign
+estado de capacidad de Microsoft 365 E5,inventory
+haz que gabriela.molina1038@empresas.com.pe pierda el acceso a Power BI Premium?,unassign
+quiero que sofia.valdez1349@empresas.com.pe herede Power BI Premium que ahora usa luis.arias0193@empresas.com.pe,reassign
+quiero que fernando.rodriguez0963@empresas.com.pe herede M365 E5 que ahora usa jorge.acosta0357@empresas.com.pe,reassign
+cambia el propietario de Visio Plan 2: alejandra.herrera1098@empresas.com.pe por ricardo.ramirez1208@empresas.com.pe?,reassign
+quiero recuperar la licencia Microsoft 365 E3 de valeria.mendoza0373@empresas.com.pe,unassign
+tengo que hacer una gestión de licencia,ambiguous
+cambia el propietario de Exchange P1: hector.torres1686@empresas.com.pe por fiorella.gonzales0696@empresas.com.pe,reassign
+qué soporte me das con las licencias?,capabilities
+consulta qué servicios licenciados tiene bruno.chavez1614@empresas.com.pe?,user_licenses
+consulta qué servicios licenciados tiene carla.gonzales0776@empresas.com.pe,user_licenses
+estado de capacidad de PowerBI,inventory
+pon M365 E3 a disposición de alejandra.navarro1101@empresas.com.pe,assign
+todo correcto contigo,wellbeing
+inventario personal de luis.valdez0189@empresas.com.pe,user_licenses
+estado de capacidad de visio plan 2?,inventory
+inventario personal de patricia.arias1273@empresas.com.pe,user_licenses
+quiero recuperar la licencia E3 de micaela.valdez1589@empresas.com.pe,unassign
+QUÉ PRODUCTOS ESTÁN VINCULADOS A ANDREA.FLORES0287@EMPRESAS.COM.PE,user_licenses
+quiero recuperar la licencia E5 de jose.morales0591@empresas.com.pe,unassign
+pon E5 Unified a disposición de carla.lopez0765@empresas.com.pe,assign
+qué productos están vinculados a diego.campos0263@empresas.com.pe,user_licenses
+dime la ocupación actual de M365 E5,inventory
+consulta qué servicios licenciados tiene diego.flores0247@empresas.com.pe,user_licenses
+quiero recuperar la licencia M365 E5 de eduardo.ortega1314@empresas.com.pe,unassign
+quiero recuperar la licencia EOA de pedro.silva0497@empresas.com.pe,unassign
+la licencia Exchange Online debe salir de camila.torres0446@empresas.com.pe y terminar en bruno.salazar1624@empresas.com.pe,reassign
+cambia el propietario de power apps: gabriela.vega1027@empresas.com.pe por micaela.rodriguez1563@empresas.com.pe,reassign
+quiero recuperar la licencia Exchange Kiosk de pedro.flores0487@empresas.com.pe,unassign
+retira del correo maria.espinoza0068@empresas.com.pe el producto planner project p3,unassign
+consulta qué servicios licenciados tiene pedro.herrera0498@empresas.com.pe,user_licenses
+haz que micaela.lopez1565@empresas.com.pe quede licenciado con M365 F3?,assign
+quiero que rafael.vega0907@empresas.com.pe herede Windows 365 que ahora usa diana.cardenas1519@empresas.com.pe,reassign
+estado de capacidad de E3,inventory
+consulta qué servicios licenciados tiene alejandra.ortega1114@empresas.com.pe,user_licenses
+necesito habilitarle power automate premium al correo ricardo.cabrera1230@empresas.com.pe,assign
+NECESITO HABILITARLE E5 AL CORREO LUCIA.DELGADO0235@EMPRESAS.COM.PE,assign
+inventario personal de oscar.campos1543@empresas.com.pe,user_licenses
+retira del correo martin.arias1393@empresas.com.pe el producto Project P3,unassign
+pon E3 a disposición de victor.ramirez1128@empresas.com.pe,assign
+haz que diana.herrera1498@empresas.com.pe quede licenciado con P3,assign
+la licencia W365 debe salir de martin.espinoza1388@empresas.com.pe y terminar en victor.flores1127@empresas.com.pe,reassign
+muéstrame el registro de actividad?,audit
+dime la ocupación actual de Power BI Premium,inventory
+dame evidencia de quién cambió qué,audit
+haz que gabriela.perez1001@empresas.com.pe pierda el acceso a planner project p3,unassign
+retira del correo carla.arias0793@empresas.com.pe el producto power bi premium,unassign
+cuánto queda por consumir de Power BI,inventory
+la licencia Visio Plan 2 debe salir de julio.ortega1794@empresas.com.pe y terminar en alejandra.espinoza1108@empresas.com.pe?,reassign
+qué productos están vinculados a julio.rojas1770@empresas.com.pe,user_licenses
+dime la ocupación actual de Microsoft 365 E3,inventory
+inventario personal de daniela.acosta0557@empresas.com.pe,user_licenses
+cambia el propietario de E5 Unified: bruno.medina1619@empresas.com.pe por rafael.ortega0914@empresas.com.pe,reassign
+la lic E5 Unified debe salir de jorge.acosta0357@empresas.com.pe y terminar en sergio.reyes0825@empresas.com.pe?,reassign
+cambia el propietario de microsoft 365 e5: carlos.silva0097@empresas.com.pe por sofia.gonzales1336@empresas.com.pe,reassign
+consulta qué servicios licenciados tiene sergio.acosta0837@empresas.com.pe,user_licenses
+pon E5 Unified a disposición de pedro.fuentes0512@empresas.com.pe,assign
+pon M365 F3 a disposición de alejandra.navarro1101@empresas.com.pe,assign
+pon Power Automate a disposición de maria.acosta0077@empresas.com.pe,assign
+quiero que victor.molina1158@empresas.com.pe herede Microsoft 365 E5 que ahora usa marco.herrera1058@empresas.com.pe,reassign
+quiero recuperar la lic Windows 365 de ricardo.fuentes1232@empresas.com.pe,unassign
+pon Power Apps Premium a disposición de valeria.acosta0397@empresas.com.pe,assign
+quiero que victor.cardenas1159@empresas.com.pe herede EOA que ahora usa fernando.vega0987@empresas.com.pe,reassign
+quiero recuperar la licencia Visio P2 de claudia.garcia0922@empresas.com.pe,unassign
+dame evidencia de quién cambió qué?,audit
+cambia el propietario de M365 F3: lucia.herrera0218@empresas.com.pe por natalia.acosta0877@empresas.com.pe,reassign
+cambia el propietario de Power BI Premium: eduardo.ramirez1288@empresas.com.pe por fernando.salazar0984@empresas.com.pe,reassign
+quiero recuperar la licencia Power Apps de victor.mendoza1133@empresas.com.pe,unassign
+necesito habilitarle EOA al correo daniela.silva0537@empresas.com.pe,assign
+cambia el propietario de Exchange P2: renato.salazar0664@empresas.com.pe por sofia.valdez1349@empresas.com.pe,reassign
+PON POWER BI A DISPOSICIÓN DE JORGE.MORALES0351@EMPRESAS.COM.PE,assign
+quiero recuperar la licencia E5 de rafael.espinoza0908@empresas.com.pe?,unassign
+qué equipo ganó ayer,out_of_scope
+terminé por ahora,farewell
+inventario personal de hector.rojas1690@empresas.com.pe,user_licenses
+cuánto queda por consumir de Power Automate,inventory
+consulta qué servicios licenciados tiene hector.medina1699@empresas.com.pe,user_licenses
+retira del correo micaela.torres1566@empresas.com.pe el producto Exchange P1,unassign
+dime la ocupación actual de Kiosk?,inventory
+dime la ocupación actual de Visio Plan 2,inventory
+necesito habilitarle Windows 365 Enterprise al correo lucia.delgado0235@empresas.com.pe,assign
+necesito habilitarle F3 FUSL al correo jorge.rojas0330@empresas.com.pe,assign
+pon PowerBI a disposición de ximena.vega1827@empresas.com.pe,assign
+qué puedo gestionar desde este chat?,capabilities
+pon exchange online a disposición de carlos.reyes0105@empresas.com.pe,assign
+haz que diana.paredes1502@empresas.com.pe pierda el acceso a planner project p3,unassign
+pon EOA a disposición de sergio.ortega0834@empresas.com.pe,assign
+terminé por ahora?,farewell
+consulta qué servicios licenciados tiene martin.valdez1389@empresas.com.pe?,user_licenses
+necesito habilitarle Planner Project P3 al correo eduardo.palomino1316@empresas.com.pe,assign
+HAZ QUE RENATO.RODRIGUEZ0643@EMPRESAS.COM.PE QUEDE LICENCIADO CON PLANNER PROJECT P3,assign
+ESTADO DE CAPACIDAD DE POWER AUTOMATE PREMIUM,inventory
+necesito habilitarle Microsoft 365 F3 al correo gonzalo.silva1857@empresas.com.pe?,assign
+inventario personal de romina.sanchez1884@empresas.com.pe,user_licenses
+cambia el propietario de Exchange Online: marco.valdez1069@empresas.com.pe por jorge.espinoza0348@empresas.com.pe,reassign
+pon W365 a disposición de gonzalo.delgado1875@empresas.com.pe,assign
+necesito habilitarle microsoft 365 e5 al correo carla.cruz0786@empresas.com.pe,assign
+dime la ocupación actual de Visio P2,inventory

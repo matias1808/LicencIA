@@ -1,0 +1,13 @@
+Texto,Esperado,Predicho,Confianza,OK
+Necesito que maria.garcia0051@empresas.com.pe tenga acceso a E3,assign,assign,0.7219,True
+Quita PowerBI de carlos.lopez0102@empresas.com.pe,unassign,unassign,0.923,True
+Quítale Visio P2 a ana.torres0080@empresas.com.pe y dásela a juan.perez0001@empresas.com.pe,reassign,reassign,0.9425,True
+El nuevo titular de W365 será maria.garcia0051@empresas.com.pe en lugar de juan.perez0001@empresas.com.pe,reassign,reassign,0.9703,True
+Hay cupos disponibles de Power Automate Premium?,inventory,inventory,0.9756,True
+Qué suscripciones tiene asociadas pedro.ramirez0200@empresas.com.pe,user_licenses,user_licenses,0.9732,True
+Necesito trazabilidad de las operaciones,audit,audit,0.9889,True
+"Buenas, qué operaciones soportas",greeting,greeting,0.8176,True
+Quiero reservar un hotel para mañana,out_of_scope,assign,0.4967,False
+Dime el clima de Lima,out_of_scope,out_of_scope,0.8127,True
+provisiona powerbi para lucia.flores0105@empresas.com.pe,assign,assign,0.9854,True
+libera una unidad de E5 retirándola de diego.sanchez0230@empresas.com.pe,unassign,unassign,0.9575,True

@@ -1,0 +1,12 @@
+{
+  "model": "LicencIA Intent Classifier v4",
+  "candidate": "sgd_unbalanced_a5e6",
+  "training_examples": 40255,
+  "stress_examples": 653,
+  "accuracy": 0.7503828483920367,
+  "precision_weighted": 0.7963406864695513,
+  "recall_weighted": 0.7503828483920367,
+  "f1_weighted": 0.7463649744783969,
+  "sha256": "62a5bac09e43c569fd68c0f0ccbaf70ab49d564d58419a84959d585cc32a182c",
+  "note": "Stress sintético separado; no sustituye validación real."
+}

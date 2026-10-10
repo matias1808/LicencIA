@@ -1,0 +1,27 @@
+{
+  "model": "LicencIA Intent Classifier v3",
+  "training_examples": 26716,
+  "challenge_examples": 1876,
+  "intents": [
+    "ambiguous",
+    "assign",
+    "audit",
+    "capabilities",
+    "catalog",
+    "farewell",
+    "greeting",
+    "inventory",
+    "out_of_scope",
+    "reassign",
+    "thanks",
+    "unassign",
+    "user_licenses",
+    "wellbeing"
+  ],
+  "challenge_accuracy": 0.7425373134328358,
+  "challenge_precision_weighted": 0.8326493427869528,
+  "challenge_recall_weighted": 0.7425373134328358,
+  "challenge_f1_weighted": 0.7405552635200765,
+  "note": "Challenge sintético con plantillas distintas; no sustituye validación real.",
+  "sha256": "a66cfbabd6eb85e985e31f1620c86d1e37256b9a7dddfb108ea1e185fb042308"
+}

@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+*firebase-adminsdk*.json
+models/beto_licencia/
+models/beto_licencia/**
+*.log

@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // La app usa Firebase Admin SDK desde el servidor.
+    // No se permite acceso directo desde clientes.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
