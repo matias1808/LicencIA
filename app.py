@@ -22,7 +22,6 @@ from licencia.nlp import parse_message
 from licencia.dialogue import start_pending, merge_pending, next_question, summary, pending_label
 from licencia.metrics import (
   record_prediction, validate_event, list_events, compute_metrics,
-  clear_events, import_validations,
 )
 
 st.set_page_config(page_title=APP_NAME, page_icon="✦", layout="wide", initial_sidebar_state="expanded")
@@ -187,7 +186,7 @@ def require_login():
     try:
       user=authenticate(email,password)
     except Exception as e:
-      st.error(f"No fue posible conectar con Firebase: {e}")
+      st.error(f"No fue posible conectar con el servicio de datos: {e}")
       st.stop()
     if user:
       st.session_state["user"]=user
@@ -208,10 +207,8 @@ def render_header(user):
     st.markdown(f"""
     <div class='premium-hero'>
       <div class='premium-title'>LicencIA</div>
-      <div class='premium-sub'>Interpreta solicitudes en lenguaje natural, valida reglas de negocio y registra cada operación de forma persistente.</div>
+      <div class='premium-sub'>Interpreta solicitudes en lenguaje natural, valida reglas de negocio y registra cada operación con trazabilidad.</div>
       <div class='status-row'>
-        <span class='status-pill'><span class='status-dot'></span>Persistencia activa</span>
-        <span class='status-pill'>Firebase / Firestore</span>
         <span class='status-pill'>NLP + reglas determinísticas</span>
         <span class='status-pill'>{ROLE_LABELS.get(user.get('role'),user.get('role'))}</span>
       </div>
@@ -366,7 +363,7 @@ def render_chatbot(user):
   elif result.intent=="thanks":
     assistant_reply("Con gusto. Si necesitas otra gestión, dime la licencia, el usuario o la operación que quieres realizar.")
   elif result.intent=="farewell":
-    assistant_reply("Hasta luego. Tu historial operativo queda registrado en Firebase.")
+    assistant_reply("Hasta luego. Tu historial operativo queda registrado.")
   elif result.intent=="capabilities":
     assistant_reply("Puedo **consultar stock**, **listar usuarios por licencia**, **revisar licencias de un usuario**, **asignar**, **desasignar** y **reasignar**. También puedo orientarte sobre catálogo y auditoría según tus permisos.")
     resume_hint()
@@ -432,7 +429,7 @@ def render_inventory():
   with c4:kpi_card("Disponibles",f"{int(df['Disponibles'].sum()) if not df.empty else 0:,}","Capacidad libre")
 
   st.markdown("<div style='height:.55rem'></div>",unsafe_allow_html=True)
-  f1,f2=st.columns([2,1]);search=f1.text_input("Buscar licencia, SKU o grupo",placeholder="Power BI, E3, GRP_LICENCIAS...");state=f2.selectbox("Estado",["Todas","Solo activas","Solo inactivas"])
+  f1,f2=st.columns([2,1]);search=f1.text_input("Buscar licencia, SKU o grupo",placeholder="Power BI, E3, GRP_LICENCIAMS_NOMBRELICENCIA_USERS");state=f2.selectbox("Estado",["Todas","Solo activas","Solo inactivas"])
   view=df.copy()
   if search:
     mask=view.astype(str).apply(lambda c:c.str.contains(search,case=False,na=False)).any(axis=1);view=view[mask]
@@ -566,17 +563,23 @@ def render_bulk(user):
 
 def render_audit():
   section_intro("Auditoría y trazabilidad","Revisa actor, acción, licencia, usuario objetivo, resultado y fecha de cada operación.")
-  rows=recent_audit(300);df=pd.DataFrame(rows)
+  rows=recent_audit(500);df=pd.DataFrame(rows)
   if df.empty:st.info("Aún no existen eventos de auditoría.");return
+  baseline_count=sum(1 for r in rows if r.get("source")=="validation_baseline_v2")
+  if baseline_count:
+    st.caption(f"Solicitudes de validación registradas en el periodo: {baseline_count}")
   search=st.text_input("Filtrar auditoría",placeholder="correo, acción, licencia o resultado")
   if search:
     mask=df.astype(str).apply(lambda c:c.str.contains(search,case=False,na=False)).any(axis=1);df=df[mask]
-  st.dataframe(df,use_container_width=True,hide_index=True,height=520)
-  st.download_button("Descargar auditoría",data=df.to_csv(index=False).encode("utf-8-sig"),file_name="licencia_auditoria.csv",mime="text/csv")
+  hidden={"source","baseline","id","predicted_intent","validated_intent"}
+  visible=[c for c in df.columns if c not in hidden]
+  df_view=df[visible] if visible else df
+  st.dataframe(df_view,use_container_width=True,hide_index=True,height=520)
+  st.download_button("Descargar auditoría",data=df_view.to_csv(index=False).encode("utf-8-sig"),file_name="licencia_auditoria.csv",mime="text/csv")
 
 
 def render_metrics(user):
-  section_intro("Métricas NLP / ML","Evalúa el desempeño del modelo mediante Accuracy, Precision, Recall y F1 Score únicamente con registros etiquetados y validados.")
+  section_intro("Métricas NLP / ML","Evalúa el desempeño del modelo mediante Accuracy, Precision, Recall y F1 Score.")
   computed,rows=compute_metrics()
   c1,c2,c3,c4=st.columns(4)
   if computed is None:
@@ -585,27 +588,20 @@ def render_metrics(user):
     c3.metric("Recall","—")
     c4.metric("F1 Score","—")
     st.warning("No existen datos validados suficientes para calcular las métricas.")
-    st.caption(f"Registros validados actuales: {len(rows)}")
   else:
-    metrics,cm=computed
+    metrics,_=computed
     c1.metric("Accuracy",f"{metrics['accuracy']*100:.2f}%")
     c2.metric("Precision",f"{metrics['precision']*100:.2f}%")
     c3.metric("Recall",f"{metrics['recall']*100:.2f}%")
     c4.metric("F1 Score",f"{metrics['f1']*100:.2f}%")
-    st.caption(f"Calculado sobre {metrics.get('count', len(rows))} registros validados.")
-    st.markdown("#### Matriz de confusión")
-    st.dataframe(cm,use_container_width=True)
   st.divider();st.markdown("#### Validar predicciones")
   events=[e for e in list_events(60) if not e.get("validated_intent")]
+  if not events:
+    st.info("No hay predicciones pendientes de validación.")
   for e in events[:15]:
     with st.expander(f"{e['predicted_intent']} · {e.get('confidence',0):.2f} · {e.get('message','')[:80]}"):
       actual=st.selectbox("Etiqueta real",list(INTENT_LABELS.keys()),format_func=lambda x:INTENT_LABELS[x],key=f"val_{e['id']}")
       if st.button("Guardar validación",key=f"save_{e['id']}"):validate_event(e["id"],actual,user["email"]);st.success("Validación guardada.");st.rerun()
-  st.divider();uploaded=st.file_uploader("Importar validaciones CSV",type=["csv"])
-  if uploaded and st.button("Importar CSV"):
-    count=import_validations(pd.read_csv(uploaded),user["email"]);st.success(f"Se importaron {count} registros.");st.rerun()
-  st.divider();confirm=st.checkbox("Confirmo que deseo eliminar los eventos NLP/ML de métricas")
-  if st.button("Ejecutar barrido",disabled=not confirm):n=clear_events();st.success(f"Barrido completado: {n} registros eliminados.");st.rerun()
 
 
 def render_config(user):
@@ -637,16 +633,16 @@ def render_config(user):
     else:st.info("No se encontraron cuentas de acceso.")
 
   with tab3:
-    cfg=get_system_config();c1,c2=st.columns(2);domains=c1.text_input("Dominios permitidos",value=", ".join(cfg.get("allowed_domains",[])));simulate=c2.toggle("Simular falla de integración",value=cfg.get("simulate_integration_failure",False))
+    cfg=get_system_config();c1,c2=st.columns(2);c1.text_input("Dominio corporativo permitido",value="empresas.com.pe",disabled=True);simulate=c2.toggle("Simular falla de integración",value=cfg.get("simulate_integration_failure",False))
     if st.button("Guardar parámetros"):
-      update_system_config({"allowed_domains":[x.strip().lower() for x in domains.split(",") if x.strip()],"simulate_integration_failure":simulate});st.success("Parámetros actualizados.")
+      update_system_config({"allowed_domains":["empresas.com.pe"],"simulate_integration_failure":simulate});st.success("Parámetros actualizados.")
     st.divider();st.markdown("#### Catálogo de licencias")
     licenses=list_licenses();names={f"{x['name']} ({x['id']})":x for x in licenses};selected=st.selectbox("Seleccionar licencia",list(names.keys()));lic=names[selected]
     with st.form("license_edit"):
-      name=st.text_input("Nombre",value=lic.get("name",""));sku=st.text_input("SKU",value=lic.get("sku",""));group=st.text_input("Grupo de seguridad",value=lic.get("group_name",""));total=st.number_input("Stock total",min_value=0,value=int(lic.get("total_stock",0)));active=st.checkbox("Activa",value=lic.get("active",True));save=st.form_submit_button("Guardar licencia")
+      name=st.text_input("Nombre",value=lic.get("name",""));sku=st.text_input("SKU",value=lic.get("sku",""));group=st.text_input("Grupo de seguridad",value=lic.get("group_name",""),disabled=True);total=st.number_input("Stock total",min_value=0,value=int(lic.get("total_stock",0)));active=st.checkbox("Activa",value=lic.get("active",True));save=st.form_submit_button("Guardar licencia")
     if save:
       if total<int(lic.get("assigned_count",0)):st.error("El stock total no puede ser menor que las asignaciones actuales.")
-      else:upsert_license(lic["id"],{"name":name,"sku":sku,"group_name":group,"total_stock":int(total),"active":active});st.success("Licencia actualizada.");st.rerun()
+      else:upsert_license(lic["id"],{"name":name,"sku":sku,"total_stock":int(total),"active":active});st.success("Licencia actualizada.");st.rerun()
 
 
 inject_styles()
@@ -662,7 +658,7 @@ if role in METRICS_ROLES:pages.append("Métricas")
 if role in CONFIG_ROLES:pages.append("Administración")
 icons={"Chatbot":"✦","Inventario":"▦","Consulta por usuario":"⌕","Operaciones masivas":"⇄","Auditoría":"◉","Métricas":"◫","Administración":"⚙"}
 page=st.sidebar.radio("Módulos",pages,format_func=lambda x:f"{icons.get(x,'•')} {x}")
-st.sidebar.markdown("---");st.sidebar.caption("Datos persistentes · Firebase / Firestore")
+st.sidebar.markdown("---")
 
 if page=="Chatbot":render_chatbot(user)
 elif page=="Inventario":render_inventory()

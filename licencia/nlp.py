@@ -66,6 +66,15 @@ def _rule_hint(text:str)->str|None:
     if any(x in t for x in holder_patterns):
         return "license_holders"
 
+    # Consultas por usuario se evalúan antes de acciones para evitar que
+    # expresiones como "licencias asignadas" se confundan con una orden de asignación.
+    if any(x in t for x in [
+        "qué licencias tiene","que licencias tiene","qué tiene asignado","que tiene asignado","licenciamiento de",
+        "suscripciones de","accesos licenciados","productos están vinculados","productos estan vinculados",
+        "servicios licenciados", "licencias del usuario", "licencias asignadas a"
+    ]):
+        return "user_licenses"
+
     # Reasignar debe evaluarse antes de asignar/desasignar.
     if (
         any(x in t for x in [
@@ -79,7 +88,7 @@ def _rule_hint(text:str)->str|None:
         return "reassign"
 
     if any(x in t for x in [
-        "desasigna","desasignar","desasignr","retira","retirar","quita","quitar","quítale","revoca",
+        "desasigna","desasignar","desasignr","decomisa","decomisar","decomise","retira","retirar","quita","quitar","quítale","revoca",
         "remueve","dar de baja","libera","deshabilita","desvincula","pierda el acceso","recupera la licencia",
         "sácale", "sacale", "elimina la licencia"
     ]):
@@ -177,7 +186,7 @@ def _has_action_domain_signal(text: str, emails: list[str], lic) -> bool:
     t = _normalize(text)
     action_words = [
         "asigna", "asignar", "dale", "otorga", "habilita", "activa", "provisiona", "concede", "ponle",
-        "desasigna", "desasignar", "retira", "retirar", "quita", "quitar", "quítale", "revoca", "remueve",
+        "desasigna", "desasignar", "decomisa", "decomisar", "decomise", "retira", "retirar", "quita", "quitar", "quítale", "revoca", "remueve",
         "libera", "deshabilita", "reasigna", "reasignar", "transfiere", "transferir", "traslada", "traspasa",
         "migrar", "cambia el titular", "nuevo titular", "licencia", "licenciamiento"
     ]

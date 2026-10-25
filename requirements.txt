@@ -6,3 +6,4 @@ pandas>=2.2
 scikit-learn==1.8.0
 rapidfuzz>=3.9
 joblib>=1.4
+requests>=2.32
