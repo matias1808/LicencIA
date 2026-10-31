@@ -49,6 +49,7 @@ def get_system_config() -> dict:
     base = {
         "allowed_domains": DEFAULT_ALLOWED_DOMAINS,
         "simulate_integration_failure": False,
+        "simulate_reassignment_failure": False,
         "integration_mode": DEFAULT_INTEGRATION_MODE,
         "integration_name": "Firebase / Firestore",
     }
@@ -279,6 +280,10 @@ def _simulate_failure_enabled() -> bool:
     return bool(get_system_config().get("simulate_integration_failure", False))
 
 
+def _simulate_reassignment_failure_enabled() -> bool:
+    return bool(get_system_config().get("simulate_reassignment_failure", False))
+
+
 def _local_assign(actor: dict, target_email: str, lic: dict):
     if _simulate_failure_enabled():
         raise IntegrationError("No se pudo completar la operación debido a un error simulado del servicio de integración.")
@@ -406,10 +411,12 @@ def unassign_license(actor: dict, target_email: str, license_id: str):
 
 
 def _local_reassign(actor: dict, source_email: str, dest_email: str, lic: dict):
+    if _simulate_failure_enabled():
+        raise IntegrationError("No se pudo completar la operación porque Firebase/Firestore se encuentra temporalmente no disponible.")
     try:
         reassign_member(
             actor.get("email"), source_email, dest_email, lic,
-            fail_midway=_simulate_failure_enabled(),
+            fail_midway=_simulate_reassignment_failure_enabled(),
         )
     except KeyError as e:
         msg = str(e)
@@ -566,11 +573,7 @@ def set_corporate_user(email: str, values: dict):
 
 
 def list_app_users(limit: int = 20, include_qa: bool = False):
-    """Return access accounts without password hashes.
-
-    Las cuentas qa_only sirven exclusivamente para evidenciar controles como CP028
-    y no se muestran como un tercer perfil funcional en la interfaz normal.
-    """
+    """Devuelve cuentas de acceso sin exponer hashes de contraseña."""
     out = []
     for d in get_db().collection("app_users").limit(limit).stream():
         x = d.to_dict() or {}
@@ -582,9 +585,34 @@ def list_app_users(limit: int = 20, include_qa: bool = False):
             "role": x.get("role", ""),
             "active": x.get("active", True),
             "can_write": x.get("can_write", True),
+            "admin_access": x.get("admin_access", x.get("role") == "platform_admin"),
         })
     return sorted(out, key=lambda x: (x.get("role", ""), x.get("email", "")))
 
+
+
+
+def update_app_user_access(email: str, *, active: bool | None = None, can_write: bool | None = None, admin_access: bool | None = None):
+    """Actualiza permisos funcionales de una cuenta de acceso sin modificar su rol ni contraseña."""
+    email = (email or "").strip().lower()
+    if not email:
+        raise ValidationError("Debes indicar una cuenta de acceso.")
+    values = {"updated_at": firestore.SERVER_TIMESTAMP}
+    if active is not None:
+        values["active"] = bool(active)
+    if can_write is not None:
+        values["can_write"] = bool(can_write)
+    if admin_access is not None:
+        values["admin_access"] = bool(admin_access)
+    get_db().collection("app_users").document(email).set(values, merge=True)
+
+
+def latest_persisted_operation():
+    """Devuelve la última operación funcional registrada en auditoría."""
+    for row in recent_audit(25):
+        if row.get("action") in {"ASSIGN", "UNASSIGN", "REASSIGN", "REASSIGN_BULK"}:
+            return row
+    return None
 
 def bulk_reassign_license(actor: dict, sources: list[str], destinations: list[str], license_id: str):
     _assert_write(actor, "REASSIGN_BULK", None, license_id)

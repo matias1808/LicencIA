@@ -19,6 +19,7 @@ DEFAULT_APP_ACCOUNTS = [
         "display_name": "Gestor de Licencias",
         "role": "license_manager",
         "can_write": True,
+        "admin_access": False,
     },
     {
         "email": "admin.licencia@empresas.com.pe",
@@ -26,6 +27,7 @@ DEFAULT_APP_ACCOUNTS = [
         "display_name": "Administrador",
         "role": "platform_admin",
         "can_write": True,
+        "admin_access": True,
     },
 ]
 
@@ -123,7 +125,7 @@ def seed_all(reset: bool = False, seed: int = 42, allow_destructive: bool = Fals
     for a in DEFAULT_APP_ACCOUNTS:
         db.collection("app_users").document(a["email"]).set({
             "email": a["email"], "display_name": a["display_name"], "role": a["role"],
-            "active": True, "can_write": a["can_write"], "qa_only": False,
+            "active": True, "can_write": a["can_write"], "admin_access": a.get("admin_access", a["role"] == "platform_admin"), "qa_only": False,
             "password_hash": hash_password(a["password"]), "must_change_password": False,
             "created_at": firestore.SERVER_TIMESTAMP,
         })
@@ -131,6 +133,7 @@ def seed_all(reset: bool = False, seed: int = 42, allow_destructive: bool = Fals
     db.collection("system_config").document("main").set({
         "allowed_domains": ["empresas.com.pe"],
         "simulate_integration_failure": False,
+        "simulate_reassignment_failure": False,
         "integration_mode": "firestore",
         "integration_name": "Security Groups",
         "initialized": True,

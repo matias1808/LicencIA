@@ -61,8 +61,8 @@ def authenticate(email: str, password: str):
 
     _audit_login(email, "SUCCESS", "Inicio de sesión correcto.")
     data["email"] = email
-    # can_write permite ejecutar CP028 sin crear un tercer perfil funcional.
     data.setdefault("can_write", True)
+    data.setdefault("admin_access", data.get("role") == "platform_admin")
     return data
 
 

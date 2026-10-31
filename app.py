@@ -17,11 +17,12 @@ from licencia.repository import (
   assign_license, unassign_license, reassign_license, bulk_reassign_license, recent_audit,
   update_system_config, get_system_config, upsert_license, set_corporate_user,
   list_corporate_users, license_assignments, list_app_users,
+  update_app_user_access, latest_persisted_operation,
 )
 from licencia.nlp import parse_message
 from licencia.dialogue import start_pending, merge_pending, next_question, summary, pending_label
 from licencia.metrics import (
-  record_prediction, validate_event, list_events, compute_metrics,
+  record_prediction, validate_event, list_events, compute_metrics, compute_baseline_metrics,
 )
 
 st.set_page_config(page_title=APP_NAME, page_icon="✦", layout="wide", initial_sidebar_state="expanded")
@@ -579,29 +580,55 @@ def render_audit():
 
 
 def render_metrics(user):
-  section_intro("Métricas NLP / ML","Evalúa el desempeño del modelo mediante Accuracy, Precision, Recall y F1 Score.")
+  st.markdown("### Comparativa de métricas")
   computed,rows=compute_metrics()
-  c1,c2,c3,c4=st.columns(4)
-  if computed is None:
-    c1.metric("Accuracy","—")
-    c2.metric("Precision","—")
-    c3.metric("Recall","—")
-    c4.metric("F1 Score","—")
-    st.warning("No existen datos validados suficientes para calcular las métricas.")
-  else:
-    metrics,_=computed
-    c1.metric("Accuracy",f"{metrics['accuracy']*100:.2f}%")
-    c2.metric("Precision",f"{metrics['precision']*100:.2f}%")
-    c3.metric("Recall",f"{metrics['recall']*100:.2f}%")
-    c4.metric("F1 Score",f"{metrics['f1']*100:.2f}%")
-  st.divider();st.markdown("#### Validar predicciones")
-  events=[e for e in list_events(60) if not e.get("validated_intent")]
+  baseline_computed,baseline_rows=compute_baseline_metrics()
+
+  base_count=len(baseline_rows)
+  current_count=len(rows)
+  new_count=max(current_count-base_count,0)
+
+  b1,b2,b3=st.columns(3)
+  b1.metric("Validaciones iniciales",base_count)
+  b2.metric("Validaciones actuales",current_count)
+  b3.metric("Nuevas validaciones",f"+{new_count}")
+
+  if baseline_computed is None or computed is None:
+    st.warning("No existen datos suficientes para mostrar la comparativa.")
+    return
+
+  bm,_=baseline_computed
+  cm,_=computed
+  metric_defs=[
+    ("Accuracy","accuracy"),
+    ("Precision","precision"),
+    ("Recall","recall"),
+    ("F1 Score","f1"),
+  ]
+
+  comparison=pd.DataFrame([
+    {
+      "Métrica":label,
+      "Inicial":f"{bm[key]*100:.2f}%",
+      "Actual":f"{cm[key]*100:.2f}%",
+      "Variación":f"{(cm[key]-bm[key])*100:+.2f}%",
+    }
+    for label,key in metric_defs
+  ])
+  st.dataframe(comparison,use_container_width=True,hide_index=True)
+
+  st.divider()
+  st.markdown("#### Validar predicciones")
+  events=[e for e in list_events(100) if not e.get("validated_intent")]
   if not events:
     st.info("No hay predicciones pendientes de validación.")
-  for e in events[:15]:
+  for e in events[:20]:
     with st.expander(f"{e['predicted_intent']} · {e.get('confidence',0):.2f} · {e.get('message','')[:80]}"):
       actual=st.selectbox("Etiqueta real",list(INTENT_LABELS.keys()),format_func=lambda x:INTENT_LABELS[x],key=f"val_{e['id']}")
-      if st.button("Guardar validación",key=f"save_{e['id']}"):validate_event(e["id"],actual,user["email"]);st.success("Validación guardada.");st.rerun()
+      if st.button("Guardar validación",key=f"save_{e['id']}"):
+        validate_event(e["id"],actual,user["email"])
+        st.success("Validación guardada.")
+        st.rerun()
 
 
 def render_config(user):
@@ -624,18 +651,76 @@ def render_config(user):
 
   with tab2:
     st.markdown("#### Perfiles de acceso")
-    st.caption("LicencIA trabaja únicamente con dos perfiles: Gestor de licencias y Administrador.")
     accounts=list_app_users(limit=20)
     if accounts:
       adf=pd.DataFrame(accounts)
       adf["Perfil"]=adf["role"].map({"license_manager":"Gestor de licencias","platform_admin":"Administrador"}).fillna(adf["role"])
-      st.dataframe(adf[["display_name","email","Perfil","active"]],use_container_width=True,hide_index=True)
-    else:st.info("No se encontraron cuentas de acceso.")
+      adf["Operaciones"]=adf["can_write"].map({True:"Habilitadas",False:"Bloqueadas"})
+      adf["Administración"]=adf["admin_access"].map({True:"Habilitada",False:"Restringida"})
+      st.dataframe(adf[["display_name","email","Perfil","active","Operaciones","Administración"]],use_container_width=True,hide_index=True)
+
+      managers=[x for x in accounts if x.get("role")=="license_manager"]
+      if managers:
+        st.divider();st.markdown("#### Permisos del Gestor")
+        selected_email=st.selectbox("Cuenta Gestor",[x["email"] for x in managers])
+        manager=next(x for x in managers if x["email"]==selected_email)
+        col1,col2,col3=st.columns(3)
+        active=col1.toggle("Cuenta activa",value=bool(manager.get("active",True)),key=f"active_{selected_email}")
+        can_write=col2.toggle("Puede gestionar licencias",value=bool(manager.get("can_write",True)),key=f"write_{selected_email}")
+        admin_access=col3.toggle("Acceso a Administración",value=bool(manager.get("admin_access",False)),key=f"admin_{selected_email}")
+        if st.button("Guardar permisos del Gestor",type="primary"):
+          update_app_user_access(selected_email,active=active,can_write=can_write,admin_access=admin_access)
+          st.success("Permisos actualizados. Se aplicarán en el siguiente inicio de sesión del Gestor.")
+          st.rerun()
+    else:
+      st.info("No se encontraron cuentas de acceso.")
 
   with tab3:
-    cfg=get_system_config();c1,c2=st.columns(2);c1.text_input("Dominio corporativo permitido",value="empresas.com.pe",disabled=True);simulate=c2.toggle("Simular falla de integración",value=cfg.get("simulate_integration_failure",False))
-    if st.button("Guardar parámetros"):
-      update_system_config({"allowed_domains":["empresas.com.pe"],"simulate_integration_failure":simulate});st.success("Parámetros actualizados.")
+    cfg=get_system_config()
+    st.markdown("#### Persistencia y seguridad")
+    c1,c2=st.columns(2)
+    c1.text_input("Dominio corporativo permitido",value="empresas.com.pe",disabled=True)
+    c2.text_input("Persistencia",value="Firebase / Firestore",disabled=True)
+
+    failure=st.toggle(
+      "Simular indisponibilidad de Firebase / Firestore",
+      value=cfg.get("simulate_integration_failure",False),
+      help="Mientras esté activo, las operaciones de licenciamiento fallan de forma controlada y quedan registradas en Auditoría.",
+    )
+    reassign_failure=st.toggle(
+      "Simular falla al registrar el destino de una reasignación",
+      value=cfg.get("simulate_reassignment_failure",False),
+      help="Permite comprobar que una reasignación se revierte completamente si falla después de retirar temporalmente al origen.",
+    )
+    if st.button("Guardar configuración de persistencia"):
+      update_system_config({
+        "allowed_domains":["empresas.com.pe"],
+        "integration_mode":"firestore",
+        "integration_name":"Firebase / Firestore",
+        "simulate_integration_failure":failure,
+        "simulate_reassignment_failure":reassign_failure,
+      })
+      st.success("Configuración actualizada.")
+      st.rerun()
+
+    st.divider();st.markdown("#### Última operación persistida")
+    last=latest_persisted_operation()
+    if not last:
+      st.info("Todavía no se ha registrado una operación de licenciamiento.")
+    else:
+      created=last.get("created_at")
+      row={
+        "Fecha / hora": created,
+        "Acción": last.get("action"),
+        "Actor": last.get("actor"),
+        "Usuario": last.get("target_user"),
+        "Licencia": last.get("license_id"),
+        "Grupo": last.get("group_name"),
+        "Resultado": last.get("result"),
+      }
+      st.dataframe(pd.DataFrame([row]),use_container_width=True,hide_index=True)
+      st.caption("Las operaciones realizadas desde Chatbot u Operaciones masivas se conservan en Firebase/Firestore y también pueden revisarse en Auditoría.")
+
     st.divider();st.markdown("#### Catálogo de licencias")
     licenses=list_licenses();names={f"{x['name']} ({x['id']})":x for x in licenses};selected=st.selectbox("Seleccionar licencia",list(names.keys()));lic=names[selected]
     with st.form("license_edit"):
@@ -655,7 +740,7 @@ pages=["Chatbot","Inventario","Consulta por usuario"]
 if role in WRITE_ROLES:pages.append("Operaciones masivas")
 if role in AUDIT_ROLES:pages.append("Auditoría")
 if role in METRICS_ROLES:pages.append("Métricas")
-if role in CONFIG_ROLES:pages.append("Administración")
+if role in CONFIG_ROLES or user.get("admin_access",False):pages.append("Administración")
 icons={"Chatbot":"✦","Inventario":"▦","Consulta por usuario":"⌕","Operaciones masivas":"⇄","Auditoría":"◉","Métricas":"◫","Administración":"⚙"}
 page=st.sidebar.radio("Módulos",pages,format_func=lambda x:f"{icons.get(x,'•')} {x}")
 st.sidebar.markdown("---")

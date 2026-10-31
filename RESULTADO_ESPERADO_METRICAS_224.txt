@@ -1,0 +1,8 @@
+Validaciones iniciales: 178
+Validaciones actuales: 224
+Nuevas validaciones: +46
+
+Accuracy:  97.75% -> 98.21%  (+0.46%)
+Precision: 98.06% -> 98.43%  (+0.37%)
+Recall:    97.75% -> 98.21%  (+0.46%)
+F1 Score:  97.79% -> 98.24%  (+0.45%)

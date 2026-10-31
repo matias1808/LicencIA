@@ -17,6 +17,7 @@ ACCOUNTS = [
         "role": "license_manager",
         "password": "LicencIA#Gestor2026!",
         "can_write": True,
+        "admin_access": False,
     },
     {
         "email": "admin.licencia@empresas.com.pe",
@@ -24,6 +25,7 @@ ACCOUNTS = [
         "role": "platform_admin",
         "password": "LicencIA#Admin2026!",
         "can_write": True,
+        "admin_access": True,
     },
 ]
 
@@ -45,6 +47,7 @@ def main():
             "role": a["role"],
             "active": True,
             "can_write": a["can_write"],
+            "admin_access": a.get("admin_access", a["role"] == "platform_admin"),
             "qa_only": False,
             "password_hash": hash_password(a["password"]),
             "must_change_password": False,
