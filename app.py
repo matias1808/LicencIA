@@ -599,11 +599,6 @@ def render_metrics(user):
     for col,(label,key) in zip(metric_cols,metric_defs):
       col.metric(label,f"{current_metrics[key]*100:.2f}%")
 
-    current_table=pd.DataFrame([
-      {"Métrica":label,"Actual":f"{current_metrics[key]*100:.2f}%"}
-      for label,key in metric_defs
-    ])
-    st.dataframe(current_table,use_container_width=True,hide_index=True)
 
   st.divider()
   st.markdown("#### Validar predicciones")
