@@ -22,7 +22,7 @@ from licencia.repository import (
 from licencia.nlp import parse_message
 from licencia.dialogue import start_pending, merge_pending, next_question, summary, pending_label
 from licencia.metrics import (
-  record_prediction, validate_event, list_events, compute_metrics, compute_baseline_metrics,
+  record_prediction, validate_event, list_events, compute_metrics,
 )
 
 st.set_page_config(page_title=APP_NAME, page_icon="✦", layout="wide", initial_sidebar_state="expanded")
@@ -580,42 +580,30 @@ def render_audit():
 
 
 def render_metrics(user):
-  st.markdown("### Comparativa de métricas")
+  st.markdown("### Métricas actuales")
   computed,rows=compute_metrics()
-  baseline_computed,baseline_rows=compute_baseline_metrics()
+  st.metric("Validaciones acumuladas",len(rows))
 
-  base_count=len(baseline_rows)
-  current_count=len(rows)
-  new_count=max(current_count-base_count,0)
+  if computed is None:
+    st.info("Aún no hay suficientes validaciones para calcular las métricas.")
+  else:
+    current_metrics,_=computed
+    metric_defs=[
+      ("Accuracy","accuracy"),
+      ("Precision","precision"),
+      ("Recall","recall"),
+      ("F1 Score","f1"),
+    ]
 
-  b1,b2,b3=st.columns(3)
-  b1.metric("Validaciones iniciales",base_count)
-  b2.metric("Validaciones actuales",current_count)
-  b3.metric("Nuevas validaciones",f"+{new_count}")
+    metric_cols=st.columns(4)
+    for col,(label,key) in zip(metric_cols,metric_defs):
+      col.metric(label,f"{current_metrics[key]*100:.2f}%")
 
-  if baseline_computed is None or computed is None:
-    st.warning("No existen datos suficientes para mostrar la comparativa.")
-    return
-
-  bm,_=baseline_computed
-  cm,_=computed
-  metric_defs=[
-    ("Accuracy","accuracy"),
-    ("Precision","precision"),
-    ("Recall","recall"),
-    ("F1 Score","f1"),
-  ]
-
-  comparison=pd.DataFrame([
-    {
-      "Métrica":label,
-      "Inicial":f"{bm[key]*100:.2f}%",
-      "Actual":f"{cm[key]*100:.2f}%",
-      "Variación":f"{(cm[key]-bm[key])*100:+.2f}%",
-    }
-    for label,key in metric_defs
-  ])
-  st.dataframe(comparison,use_container_width=True,hide_index=True)
+    current_table=pd.DataFrame([
+      {"Métrica":label,"Actual":f"{current_metrics[key]*100:.2f}%"}
+      for label,key in metric_defs
+    ])
+    st.dataframe(current_table,use_container_width=True,hide_index=True)
 
   st.divider()
   st.markdown("#### Validar predicciones")
