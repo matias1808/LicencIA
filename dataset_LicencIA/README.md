@@ -7,7 +7,6 @@ The dataset includes license assignment, removal, reassignment, inventory querie
 ## Files
 
 - **`validation_224_synthetic.csv`** — the 224 labeled requests.
-- **`reproduce_metrics.py`** — script to evaluate the requests using the LicencIA classifier.
 
 ## Dataset structure
 
