@@ -1,0 +1,3 @@
+﻿account_email,display_name,role,can_write,admin_access
+gestor.licencias@empresas.com.pe,Gestor de Licencias,license_manager,True,False
+admin.licencia@empresas.com.pe,Administrador,platform_admin,True,True

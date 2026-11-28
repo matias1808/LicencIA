@@ -23,4 +23,4 @@ streamlit run app.py
 
 Se necesitan credenciales de Firebase en los **Secrets de Streamlit** (ejemplo: `.streamlit/secrets.toml.example`). Para inicializar una base vacía se utiliza `scripts/initialize_firestore.py` con las variables de entorno `LICENCIA_BOOTSTRAP_GESTOR_PASSWORD` y `LICENCIA_BOOTSTRAP_ADMIN_PASSWORD` configuradas.
 
-El conjunto de **224 solicitudes sintéticas etiquetadas** utilizado para demostración está en `dataset_LicencIA/validation_224_synthetic.csv`.
+Los archivos CSV de datos **sintéticos** para el material suplementario de MAKE se encuentran en `dataset_LicencIA/`.
