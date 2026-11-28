@@ -23,6 +23,4 @@ if __name__ == "__main__":
     result = seed_all(reset=destructive, allow_destructive=destructive)
     print(result)
     if result.get("status") != "already_initialized":
-        print("\nCredenciales iniciales:")
-        print("gestor.licencias@empresas.com.pe / LicencIA#Gestor2026!")
-        print("admin.licencia@empresas.com.pe / LicencIA#Admin2026!")
+        print("\nCuentas iniciales creadas con las contraseñas proporcionadas por variables de entorno.")

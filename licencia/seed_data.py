@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import random
 import re
 import unicodedata
@@ -15,7 +16,6 @@ from .config import SECURITY_GROUPS_COLLECTION
 DEFAULT_APP_ACCOUNTS = [
     {
         "email": "gestor.licencias@empresas.com.pe",
-        "password": "LicencIA#Gestor2026!",
         "display_name": "Gestor de Licencias",
         "role": "license_manager",
         "can_write": True,
@@ -23,7 +23,6 @@ DEFAULT_APP_ACCOUNTS = [
     },
     {
         "email": "admin.licencia@empresas.com.pe",
-        "password": "LicencIA#Admin2026!",
         "display_name": "Administrador",
         "role": "platform_admin",
         "can_write": True,
@@ -108,6 +107,18 @@ def seed_all(reset: bool = False, seed: int = 42, allow_destructive: bool = Fals
     if reset and not allow_destructive:
         raise RuntimeError("Reset destructivo bloqueado. Debes confirmarlo explícitamente.")
 
+    # Initial credentials must be provided securely, never stored in source code.
+    bootstrap_passwords = {
+        "license_manager": os.environ.get("LICENCIA_BOOTSTRAP_GESTOR_PASSWORD", ""),
+        "platform_admin": os.environ.get("LICENCIA_BOOTSTRAP_ADMIN_PASSWORD", ""),
+    }
+    if any(len(value) < 12 for value in bootstrap_passwords.values()):
+        raise RuntimeError(
+            "Configura LICENCIA_BOOTSTRAP_GESTOR_PASSWORD y "
+            "LICENCIA_BOOTSTRAP_ADMIN_PASSWORD (12 caracteres como mínimo) "
+            "antes de inicializar Firestore."
+        )
+
     if reset:
         for g in db.collection(SECURITY_GROUPS_COLLECTION).stream():
             _delete_collection(g.reference.collection("members"))
@@ -126,7 +137,7 @@ def seed_all(reset: bool = False, seed: int = 42, allow_destructive: bool = Fals
         db.collection("app_users").document(a["email"]).set({
             "email": a["email"], "display_name": a["display_name"], "role": a["role"],
             "active": True, "can_write": a["can_write"], "admin_access": a.get("admin_access", a["role"] == "platform_admin"), "qa_only": False,
-            "password_hash": hash_password(a["password"]), "must_change_password": False,
+            "password_hash": hash_password(bootstrap_passwords[a["role"]]), "must_change_password": False,
             "created_at": firestore.SERVER_TIMESTAMP,
         })
 

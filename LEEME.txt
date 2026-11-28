@@ -1,1 +1,0 @@
-Reemplaza app.py y reinicia Streamlit. La sección Métricas mostrará Accuracy, Precision, Recall y F1 Score en ese orden.

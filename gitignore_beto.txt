@@ -1,3 +1,0 @@
-# Añade estas líneas a tu .gitignore antes de publicar en GitHub
-models/beto_licencia/
-models/beto_licencia/**
