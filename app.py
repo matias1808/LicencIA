@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import base64
+import html
 from pathlib import Path
 
 import pandas as pd
@@ -298,30 +299,52 @@ def render_chatbot(user):
       except LicencIAError as e:
         assistant_reply(str(e))
       return True
+    # A complete request still requires valid corporate identities before
+    # offering an executable confirmation. Backend checks run again at execution.
+    try:
+      if p["intent"] in {"assign","unassign"}:
+        validate_corporate_user(p["target"])
+      elif p["intent"]=="reassign":
+        validate_corporate_user(p["source"])
+        validate_corporate_user(p["dest"])
+    except LicencIAError as e:
+      st.session_state["pending_dialogue"]=p
+      assistant_reply(f"No puedo preparar la operación: {e} Indica un correo corporativo válido para continuar.")
+      return False
     st.session_state["pending_action"]=p
     assistant_reply(f"Tengo todo listo: **{summary(p)}**. Revisa el detalle y confirma la operación.")
     return True
 
+  def execute_pending_action(p):
+    """Run only a complete, confirmed request through the existing rule engine."""
+    try:
+      if p["intent"]=="assign":
+        msg=assign_license(user,p["target"],p["license_id"])
+      elif p["intent"]=="unassign":
+        msg=unassign_license(user,p["target"],p["license_id"])
+      elif p["intent"]=="reassign":
+        msg=reassign_license(user,p["source"],p["dest"],p["license_id"])
+      else:
+        raise LicencIAError("Tipo de operación no reconocido.")
+      assistant_reply(msg)
+    except LicencIAError as e:
+      assistant_reply(f"No se pudo completar la operación: {e}")
+    finally:
+      st.session_state.pop("pending_action",None)
+
   pending_action=st.session_state.get("pending_action")
   if pending_action:
-    st.markdown(f"<div class='pending-banner'><b>Confirmación requerida</b> · {summary(pending_action)}</div>",unsafe_allow_html=True)
+    # summary() returns Markdown; avoid printing literal ** inside HTML.
+    safe_summary=html.escape(summary(pending_action)).replace("**","")
+    st.markdown(f"<div class='pending-banner'><b>Confirmación requerida</b> · {safe_summary}</div>",unsafe_allow_html=True)
     c1,c2=st.columns(2)
     if c1.button("Confirmar operación",type="primary",use_container_width=True):
-      try:
-        if pending_action["intent"]=="assign":
-          msg=assign_license(user,pending_action["target"],pending_action["license_id"])
-        elif pending_action["intent"]=="unassign":
-          msg=unassign_license(user,pending_action["target"],pending_action["license_id"])
-        else:
-          msg=reassign_license(user,pending_action["source"],pending_action["dest"],pending_action["license_id"])
-        st.success(msg)
-        st.session_state.chat_history.append(("assistant",msg))
-      except LicencIAError as e:
-        st.error(str(e));st.session_state.chat_history.append(("assistant",str(e)))
-      finally:
-        st.session_state.pop("pending_action",None);st.rerun()
+      execute_pending_action(pending_action)
+      st.rerun()
     if c2.button("Cancelar",use_container_width=True):
-      st.session_state.pop("pending_action",None);st.info("Operación cancelada.");st.rerun()
+      st.session_state.pop("pending_action",None)
+      assistant_reply("Operación cancelada. ¿Qué deseas hacer ahora?")
+      st.rerun()
 
   prompt=st.chat_input("Escribe tu solicitud en lenguaje natural…")
   queued=st.session_state.pop("queued_prompt",None)
@@ -333,10 +356,19 @@ def render_chatbot(user):
   with st.chat_message("user"):
     st.write(final_prompt)
 
-  low=final_prompt.strip().lower()
+  low=final_prompt.strip().lower().strip(" .!?¡¿")
   if low in {"cancelar","cancela","olvídalo","olvidalo","ya no","no importa"}:
     st.session_state.pop("pending_dialogue",None);st.session_state.pop("pending_action",None)
     assistant_reply("Solicitud cancelada. ¿Qué deseas hacer ahora?")
+    return
+
+  # Confirmation is a dialogue control, not a new prediction to classify.
+  confirmations={"confirmar","confirmo","confirmar operación","confirmar operacion","sí","si","ok","dale","proceder"}
+  if low in confirmations and st.session_state.get("pending_action"):
+    execute_pending_action(st.session_state["pending_action"])
+    st.rerun()
+  if low in {"confirmar","confirmo","confirmar operación","confirmar operacion"}:
+    assistant_reply("No hay ninguna operación lista para confirmar. Indícame la gestión que deseas realizar.")
     return
 
   result=parse_message(final_prompt)
@@ -346,6 +378,11 @@ def render_chatbot(user):
   explicit=result.intent in {"assign","unassign","reassign","user_licenses"}
   interrupt={"greeting","wellbeing","thanks","farewell","capabilities","catalog","audit","inventory","license_holders","out_of_scope","ambiguous"}
 
+  # A standalone email or recognized license can complete a previous request
+  # even when the classifier labels that short reply as ambiguous.
+  slot_reply=(len(result.emails)==1 and low==result.emails[0]) or (result.intent=="ambiguous" and bool(result.license_id))
+  if pending and slot_reply:
+    p=merge_pending(pending,result);st.session_state["pending_dialogue"]=p;complete_or_ask(p);return
   if pending and result.intent in interrupt:
     pass
   elif pending and explicit and result.intent!=pending.get("intent"):
